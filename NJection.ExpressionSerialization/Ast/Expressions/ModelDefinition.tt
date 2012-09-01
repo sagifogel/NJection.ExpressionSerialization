@@ -1,0 +1,39 @@
+<#@ template language="C#" hostspecific="True" debug="True" #>
+<#@ output extension="cs" #>
+<#@ xsd processor="T4Toolbox.XsdProcessor" file="../../Ast/Configuration/ModelDefinition.xsd" #>
+<#@ include file="T4Toolbox.tt" #>
+<#
+	model = models.Load(Host.ResolvePath("../../Ast/Configuration/ModelDefinition.xml"));
+#>
+using System;
+using System.Linq.Expressions;
+using NJection.ExpressionSerialization.Ast.Configuration;
+using NJection.ExpressionSerialization.Ast.Visitors;
+
+namespace NJection.ExpressionSerialization.Ast.Expressions
+{<#	foreach (var item in model.expression) 
+	{	
+		var className = string.Format("{0}Reader", item.name);
+		var baseClass = item.isScope ? "Scope" : "AbstractExpression";
+
+#>	<#= Environment.NewLine #>	public partial class <#= className #> : <#= baseClass #>
+	{	
+		private <#= item.name #>Configuration _configuration = null;
+
+		internal <#= className #>(<#= item.name #>Configuration configuration, IScope scope, IConfigurationVisitor visitor) 
+			: base(scope, visitor) {
+
+			_configuration = configuration;
+			ReadConfiguration(configuration);	
+		}
+		
+		partial void ReadConfiguration(<#= item.name #>Configuration configuration);
+		
+		protected override ExpressionType AstNodeType {
+            get { return ExpressionType.<#=item.nodeType #>; }
+        }
+	}<#= Environment.NewLine #><#
+}#>}
+<#+ 
+	models model;
+#>

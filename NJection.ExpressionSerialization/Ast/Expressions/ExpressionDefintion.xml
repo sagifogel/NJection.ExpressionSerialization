@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<njection_configuration xmlns="urn:njection-configuration">
+  <lambda type="System.Func`2[System.Int32, [Tester.Test, Tester]]">
+    <expression xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="NewExpressionConfiguration" type="Tester.Test, Tester">
+      <arguments>
+        <parameter ref="value" />
+      </arguments>
+    </expression>
+    <arguments>
+      <parameter type="System.Int32" name="value"/>
+    </arguments>
+  </lambda>
+</njection_configuration>
+

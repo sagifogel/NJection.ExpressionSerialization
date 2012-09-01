@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ExpressionDefinition"
+    targetNamespace="urn:njection-configuration"
+    elementFormDefault="qualified"
+    xmlns="urn:njection-configuration"
+    xmlns:mstns="urn:njection-configuration"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"             
+>
+  <xs:include schemaLocation="ModelDefinition.xsd"></xs:include>
+  
+  <xs:element name="njection_configuration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="LambdaExpressionConfiguration" name="lambda" maxOccurs="1"></xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+</xs:schema>

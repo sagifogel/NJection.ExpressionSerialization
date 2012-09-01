@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0D0FC91A-5897-4129-A643-5111A25DD1A6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NJection.ExpressionReader</RootNamespace>
+    <AssemblyName>NJection.ExpressionReader</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ast\Configuration\ConfigurationDefinition.cs">
+      <DependentUpon>ConfigurationDefinition.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Ast\Configuration\ConfigurationDefintion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConfigurationDefintion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Ast\Expressions\AbstractExpression.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Ast\Expressions\ExpresionReader.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExpresionReader.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ast\Expressions\LambdaExpressionReader.cs" />
+    <Compile Include="Ast\Expressions\ModelDefinition.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDefinition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ast\Expressions\NewExpressionReader.cs" />
+    <Compile Include="Ast\Expressions\ParameterExpressionReader.cs" />
+    <Compile Include="Ast\Root\BranchingRegistry.cs" />
+    <Compile Include="Ast\Root\IBranchingRegistry.cs" />
+    <Compile Include="Ast\Root\IMethodScope.cs" />
+    <Compile Include="Ast\Scope\IContext.cs" />
+    <Compile Include="Ast\Scope\IScope.cs" />
+    <Compile Include="Ast\Scope\IScopeChild.cs" />
+    <Compile Include="Ast\Scope\Scope.cs" />
+    <Compile Include="Ast\Scope\Variable.cs" />
+    <Compile Include="Ast\Visitors\IConfigurationVisitor.ext.cs" />
+    <Compile Include="Ast\Visitors\IConfigurationVisitor.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IConfigurationVisitor.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions\CollectionExtensions.cs" />
+    <Compile Include="Ast\Configuration\ExpressionExtensions.cs" />
+    <Compile Include="Extensions\ReflectionExtensions.cs" />
+    <Compile Include="Fluent\ExpressionSerializer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ast\Configuration\ConfigurationDefinition.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ConfigurationDefinition.cs</LastGenOutput>
+      <CustomToolNamespace>T4ScriptFileGenerator</CustomToolNamespace>
+    </None>
+    <None Include="Ast\Configuration\ConfigurationDefintion.xsd">
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>NJection.ExpressionReader.Ast.Configuration</CustomToolNamespace>
+      <Generator>Xsd2CodeCustomTool</Generator>
+      <LastGenOutput>ConfigurationDefintion.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Ast\Expressions\ExpresionReader.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ExpresionReader.cs</LastGenOutput>
+    </None>
+    <None Include="Ast\Expressions\ModelDefinition.tt">
+      <CustomToolNamespace>T4ScriptFileGenerator</CustomToolNamespace>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelDefinition.cs</LastGenOutput>
+    </None>
+    <None Include="Ast\Configuration\ModelDefinition.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Ast\Visitors\IConfigurationVisitor.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>IConfigurationVisitor.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Ast\Expressions\ExpressionDefintion.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Ast\Configuration\ModelDefinition.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

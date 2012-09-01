@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ModelDefinition"
+    targetNamespace="urn:njection-configuration"
+    elementFormDefault="qualified"
+    xmlns="urn:njection-configuration"
+    xmlns:mstns="urn:njection-configuration"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="models">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="expression" type="expression" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+    <xs:key name="NodeTypeKey">
+      <xs:selector xpath="expression"/>
+      <xs:field xpath="@nodeType" />
+    </xs:key>
+  </xs:element>
+
+  <xs:complexType name="expression">
+    <xs:attribute type="ConfigurationNodeType" name="nodeType"></xs:attribute>
+    <xs:attribute type="xs:string" name="name"></xs:attribute>
+    <xs:attribute type="xs:boolean" name="isScope" use="optional" default="false"></xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="LambdaExpressionConfiguration">
+    <xs:complexContent>
+      <xs:extension base="ExpressionConfiguration">
+        <xs:sequence>
+          <xs:element type="ExpressionConfiguration" name="expression" maxOccurs="1" minOccurs="1" />
+          <xs:element type="arguments" name="arguments" maxOccurs="1" minOccurs="1"></xs:element>
+        </xs:sequence>
+        <xs:attribute name="nodeType" type="ConfigurationNodeType" fixed="Lambda"></xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:group name="lambdagroup">
+    <xs:choice>
+      <xs:element name="constant" type="ConstantExpressionConfiguration"></xs:element>
+      <xs:element name="new" type="NewExpressionConfiguration"></xs:element>
+    </xs:choice>
+  </xs:group>
+
+  <xs:complexType name="ExpressionConfiguration" abstract="true">
+    <xs:attribute name="type" type="TypeSystem"></xs:attribute>
+  </xs:complexType>
+  
+  <xs:complexType name="ConstantExpressionConfiguration">
+    <xs:complexContent>
+      <xs:extension base="ExpressionConfiguration">
+        <xs:attribute name="nodeType" type="ConfigurationNodeType" fixed="Constant" />
+        <xs:attribute name="value" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="NewExpressionConfiguration">
+    <xs:complexContent>
+      <xs:extension base="ExpressionConfiguration">
+        <xs:sequence>
+          <xs:element type="arguments" name="arguments" maxOccurs="unbounded" minOccurs="0"></xs:element>
+        </xs:sequence>
+        <xs:attribute name="nodeType" type="ConfigurationNodeType" fixed="New" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ParameterExpressionConfiguration">
+    <xs:complexContent>
+      <xs:extension base="ExpressionConfiguration">
+        <xs:attribute name="nodeType" type="ConfigurationNodeType" fixed="Parameter" />
+        <xs:attribute name="name" use="optional"></xs:attribute>
+        <xs:attribute name="ref" use="optional"></xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="arguments">
+    <xs:sequence maxOccurs="unbounded" minOccurs="0">
+      <!--<xs:element type="ConstantExpressionConfiguration" name="constant" minOccurs="0" maxOccurs="unbounded"></xs:element>-->
+      <xs:element type="ParameterExpressionConfiguration" name="parameter" minOccurs="0" maxOccurs="unbounded"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="ConfigurationNodeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Constant" />
+      <xs:enumeration value="Parameter" />
+      <xs:enumeration value="New" />
+      <xs:enumeration value="Lambda" />
+      <xs:enumeration value="Expression" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="TypeSystem">
+    <xs:union memberTypes="CommonTypeSystem NonEmptyString"></xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="NonEmptyString">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:pattern value=".*[^\s].*" />
+      <xs:whiteSpace value="replace" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="CommonTypeSystem">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="System.String" />
+      <xs:enumeration value="System.Char" />
+      <xs:enumeration value="System.Boolean" />
+      <xs:enumeration value="System.Int16" />
+      <xs:enumeration value="System.Int32" />
+      <xs:enumeration value="System.Int64" />
+      <xs:enumeration value="System.Single" />
+      <xs:enumeration value="System.Double" />
+      <xs:enumeration value="System.UInt16" />
+      <xs:enumeration value="System.UInt32" />
+      <xs:enumeration value="System.UInt64" />
+      <xs:enumeration value="System.SByte" />
+      <xs:enumeration value="System.Object" />
+      <xs:enumeration value="System.DateTime" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

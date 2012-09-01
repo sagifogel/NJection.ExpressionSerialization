@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<models xmlns="urn:njection-configuration">
+  <expression name="LambdaExpression" nodeType="Lambda" isScope="true" />
+	<expression name="ConstantExpression" nodeType="Constant"/>
+	<expression name="NewExpression" nodeType="New"/>
+	<expression name="ParameterExpression" nodeType="Parameter"/>
+</models>

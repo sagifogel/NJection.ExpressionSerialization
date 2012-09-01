@@ -1,0 +1,24 @@
+﻿<#@ template language="C#" hostspecific="True" debug="True" #>
+<#@ output extension="cs" #>
+<#@ xsd processor="T4Toolbox.XsdProcessor" file="../../Ast/Configuration/ModelDefinition.xsd" #>
+<#@ include file="T4Toolbox.tt" #>
+<#
+	model = models.Load(Host.ResolvePath("../../Ast/Configuration/ModelDefinition.xml"));
+#>
+using System;
+using System.Linq.Expressions;
+using NJection.ExpressionSerialization.Ast.Configuration;
+using NJection.ExpressionSerialization.Ast.Visitors;
+
+namespace NJection.ExpressionSerialization.Ast.Expressions
+{
+	public abstract class ExpressionReader : Expression
+	{<#	foreach (var item in model.expression) 
+{ #><#= Environment.NewLine #>		public static Expression <#= item.nodeType #>(<#= item.name #>Configuration configuration, IScope scope, IConfigurationVisitor visitor) {
+			return new <#= item.name #>Reader(configuration, scope, visitor);
+		}<#= Environment.NewLine #><# }#>
+	}
+}
+<#+ 
+	models model;
+#>

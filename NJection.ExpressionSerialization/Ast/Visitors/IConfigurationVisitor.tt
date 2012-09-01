@@ -1,0 +1,43 @@
+﻿<#@ template language="C#" hostspecific="True" debug="True" #>
+<#@ output extension=".cs" #>
+<#@ xsd processor="T4Toolbox.XsdProcessor" file="../Configuration\ModelDefinition.xsd" #>
+<#@ include file="T4Toolbox.tt" #>
+<#@ assembly Name="System.Core.dll" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Linq" #>
+<#
+	model = models.Load(Host.ResolvePath("../Configuration/ModelDefinition.xml"));
+#>
+using System;
+using System.Linq;
+using System.Linq.Expressions;
+using NJection.ExpressionSerialization.Ast.Configuration;
+using NJection.ExpressionSerialization.Ast.Expressions;
+
+namespace NJection.ExpressionSerialization.Ast.Visitors
+{
+	public partial interface IConfigurationVisitor
+	{
+<#	foreach (var item in model.expression) 	{	
+		var name = item.name;
+		var camelCaseName =  string.Join("", name.Take(1).Select(i => i.ToString().ToLower()).Concat(name.Skip(1).Select(i => i.ToString())));
+#>		Expression Visit(IScope scope, <#= name #>Configuration configuration);
+<#
+	}    
+#>
+	}
+	
+	public class ConfigurationVisitor : IConfigurationVisitor
+    {<#	foreach (var item in model.expression) 	{	
+		var name = item.name;
+		var camelCaseName =  string.Join("", name.Take(1).Select(i => i.ToString().ToLower()).Concat(name.Skip(1).Select(i => i.ToString())));
+#><#= Environment.NewLine #>		public Expression Visit(IScope scope, <#= name #>Configuration configuration) {
+			return ExpressionReader.<#= item.nodeType #>(configuration, scope, this);
+		}
+<#
+	}#>
+	}
+}
+<#+ 
+	models model;
+#>

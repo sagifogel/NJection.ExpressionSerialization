@@ -1,0 +1,25 @@
+<#@ template language="C#" hostspecific="True" debug="True" #>
+<#@ output extension="cs" #>
+<#@ xsd processor="T4Toolbox.XsdProcessor" file="ModelDefinition.xsd" #>
+<#@ include file="T4Toolbox.tt" #>
+<#
+	model = models.Load(Host.ResolvePath("ModelDefinition.xml"));
+#>
+using System;
+using System.Linq.Expressions;
+using NJection.ExpressionSerialization.Ast.Configuration;
+using NJection.ExpressionSerialization.Ast.Visitors;
+
+namespace NJection.ExpressionSerialization.Ast.Configuration
+{<#	foreach (var item in model.expression) 
+	{	
+#>	<#= Environment.NewLine #>	public partial class <#= item.name #>Configuration 
+	{
+		internal override Expression Accept(IScope scope, IConfigurationVisitor visitor) {
+            return visitor.Visit(scope, this);
+        }
+	}<#= Environment.NewLine #><#
+}#>}
+<#+ 
+	models model;
+#>
