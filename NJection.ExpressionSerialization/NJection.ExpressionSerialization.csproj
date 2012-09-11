@@ -81,6 +81,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>IConfigurationVisitor.tt</DependentUpon>
     </Compile>
+    <Compile Include="DelegateConstraintAttribute.cs" />
     <Compile Include="Extensions\CollectionExtensions.cs" />
     <Compile Include="Ast\Configuration\ExpressionExtensions.cs" />
     <Compile Include="Extensions\ReflectionExtensions.cs" />
@@ -120,7 +121,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Ast\Expressions\ExpressionDefintion.xml">
+    <Content Include="ExpressionDefintion.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Ast\Configuration\ModelDefinition.xml" />

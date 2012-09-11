@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NJection.ExpressionSerialization", "NJection.ExpressionSerialization\NJection.ExpressionSerialization.csproj", "{0D0FC91A-5897-4129-A643-5111A25DD1A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tester", "Tester\Tester.csproj", "{91DB673B-0E0E-4EB9-90C7-56F027C14D5C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tester", "..\..\..\Dropbox\ExpressionSerialization\Tester\Tester.csproj", "{91DB673B-0E0E-4EB9-90C7-56F027C14D5C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

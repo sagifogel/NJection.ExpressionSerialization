@@ -4,7 +4,8 @@
 //    <NameSpace>NJection.ExpressionSerialization.Ast.Configuration</NameSpace><Collection>List</Collection><codeType>CSharp</codeType><EnableDataBinding>False</EnableDataBinding><EnableLazyLoading>False</EnableLazyLoading><TrackingChangesEnable>False</TrackingChangesEnable><GenTrackingClasses>False</GenTrackingClasses><HidePrivateFieldInIDE>False</HidePrivateFieldInIDE><EnableSummaryComment>False</EnableSummaryComment><VirtualProp>False</VirtualProp><IncludeSerializeMethod>True</IncludeSerializeMethod><UseBaseClass>False</UseBaseClass><GenBaseClass>False</GenBaseClass><GenerateCloneMethod>False</GenerateCloneMethod><GenerateDataContracts>False</GenerateDataContracts><CodeBaseTag>Net40</CodeBaseTag><SerializeMethodName>Serialize</SerializeMethodName><DeserializeMethodName>Deserialize</DeserializeMethodName><SaveToFileMethodName>SaveToFile</SaveToFileMethodName><LoadFromFileMethodName>LoadFromFile</LoadFromFileMethodName><GenerateXMLAttributes>True</GenerateXMLAttributes><EnableEncoding>True</EnableEncoding><AutomaticProperties>False</AutomaticProperties><GenerateShouldSerialize>False</GenerateShouldSerialize><DisableDebug>False</DisableDebug><PropNameSpecified>Default</PropNameSpecified><Encoder>UTF8</Encoder><CustomUsings></CustomUsings><ExcludeIncludedTypes>False</ExcludeIncludedTypes><EnableInitializeFields>True</EnableInitializeFields>
 //  </auto-generated>
 // ------------------------------------------------------------------------------
-namespace NJection.ExpressionSerialization.Ast.Configuration {
+namespace NJection.ExpressionSerialization.Ast.Configuration
+{
     using System;
     using System.Diagnostics;
     using System.Xml.Serialization;
@@ -15,24 +16,25 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
     using System.Text;
     using System.Xml;
     using System.Collections.Generic;
-    
-    
+
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="urn:njection-configuration")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="urn:njection-configuration", IsNullable=false)]
-    public partial class models {
-        
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:njection-configuration")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:njection-configuration", IsNullable = false)]
+    public partial class models
+    {
+
         private List<expression> expressionField;
-        
+
         private static System.Xml.Serialization.XmlSerializer serializer;
-        
+
         public models() {
             this.expressionField = new List<expression>();
         }
-        
-        [System.Xml.Serialization.XmlElementAttribute("expression", Order=0)]
+
+        [System.Xml.Serialization.XmlElementAttribute("expression", Order = 0)]
         public List<expression> expression {
             get {
                 return this.expressionField;
@@ -41,7 +43,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 this.expressionField = value;
             }
         }
-        
+
         private static System.Xml.Serialization.XmlSerializer Serializer {
             get {
                 if ((serializer == null)) {
@@ -50,7 +52,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 return serializer;
             }
         }
-        
+
         #region Serialize/Deserialize
         /// <summary>
         /// Serializes current models object into an XML document
@@ -78,11 +80,11 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 }
             }
         }
-        
+
         public virtual string Serialize() {
             return Serialize(Encoding.UTF8);
         }
-        
+
         /// <summary>
         /// Deserializes workflow markup into an models object
         /// </summary>
@@ -102,12 +104,12 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 return false;
             }
         }
-        
+
         public static bool Deserialize(string xml, out models obj) {
             System.Exception exception = null;
             return Deserialize(xml, out obj, out exception);
         }
-        
+
         public static models Deserialize(string xml) {
             System.IO.StringReader stringReader = null;
             try {
@@ -120,7 +122,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 }
             }
         }
-        
+
         /// <summary>
         /// Serializes current models object into file
         /// </summary>
@@ -138,15 +140,15 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 return false;
             }
         }
-        
+
         public virtual bool SaveToFile(string fileName, out System.Exception exception) {
             return SaveToFile(fileName, Encoding.UTF8, out exception);
         }
-        
+
         public virtual void SaveToFile(string fileName) {
             SaveToFile(fileName, Encoding.UTF8);
         }
-        
+
         public virtual void SaveToFile(string fileName, System.Text.Encoding encoding) {
             System.IO.StreamWriter streamWriter = null;
             try {
@@ -161,7 +163,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 }
             }
         }
-        
+
         /// <summary>
         /// Deserializes xml markup from file into an models object
         /// </summary>
@@ -181,20 +183,20 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 return false;
             }
         }
-        
+
         public static bool LoadFromFile(string fileName, out models obj, out System.Exception exception) {
             return LoadFromFile(fileName, Encoding.UTF8, out obj, out exception);
         }
-        
+
         public static bool LoadFromFile(string fileName, out models obj) {
             System.Exception exception = null;
             return LoadFromFile(fileName, out obj, out exception);
         }
-        
+
         public static models LoadFromFile(string fileName) {
             return LoadFromFile(fileName, Encoding.UTF8);
         }
-        
+
         public static models LoadFromFile(string fileName, System.Text.Encoding encoding) {
             System.IO.FileStream file = null;
             System.IO.StreamReader sr = null;
@@ -217,27 +219,28 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
         }
         #endregion
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:njection-configuration")]
-    public partial class expression {
-        
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:njection-configuration")]
+    public partial class expression
+    {
+
         private ConfigurationNodeType nodeTypeField;
-        
+
         private bool nodeTypeFieldSpecified;
-        
+
         private string nameField;
-        
+
         private bool isScopeField;
-        
+
         private static System.Xml.Serialization.XmlSerializer serializer;
-        
+
         public expression() {
             this.isScopeField = false;
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public ConfigurationNodeType nodeType {
             get {
@@ -247,7 +250,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 this.nodeTypeField = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool nodeTypeSpecified {
             get {
@@ -257,7 +260,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 this.nodeTypeFieldSpecified = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string name {
             get {
@@ -267,7 +270,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 this.nameField = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(false)]
         public bool isScope {
@@ -278,7 +281,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 this.isScopeField = value;
             }
         }
-        
+
         private static System.Xml.Serialization.XmlSerializer Serializer {
             get {
                 if ((serializer == null)) {
@@ -287,7 +290,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 return serializer;
             }
         }
-        
+
         #region Serialize/Deserialize
         /// <summary>
         /// Serializes current expression object into an XML document
@@ -315,11 +318,11 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 }
             }
         }
-        
+
         public virtual string Serialize() {
             return Serialize(Encoding.UTF8);
         }
-        
+
         /// <summary>
         /// Deserializes workflow markup into an expression object
         /// </summary>
@@ -339,12 +342,12 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 return false;
             }
         }
-        
+
         public static bool Deserialize(string xml, out expression obj) {
             System.Exception exception = null;
             return Deserialize(xml, out obj, out exception);
         }
-        
+
         public static expression Deserialize(string xml) {
             System.IO.StringReader stringReader = null;
             try {
@@ -357,7 +360,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 }
             }
         }
-        
+
         /// <summary>
         /// Serializes current expression object into file
         /// </summary>
@@ -375,15 +378,15 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 return false;
             }
         }
-        
+
         public virtual bool SaveToFile(string fileName, out System.Exception exception) {
             return SaveToFile(fileName, Encoding.UTF8, out exception);
         }
-        
+
         public virtual void SaveToFile(string fileName) {
             SaveToFile(fileName, Encoding.UTF8);
         }
-        
+
         public virtual void SaveToFile(string fileName, System.Text.Encoding encoding) {
             System.IO.StreamWriter streamWriter = null;
             try {
@@ -398,7 +401,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 }
             }
         }
-        
+
         /// <summary>
         /// Deserializes xml markup from file into an expression object
         /// </summary>
@@ -418,20 +421,20 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 return false;
             }
         }
-        
+
         public static bool LoadFromFile(string fileName, out expression obj, out System.Exception exception) {
             return LoadFromFile(fileName, Encoding.UTF8, out obj, out exception);
         }
-        
+
         public static bool LoadFromFile(string fileName, out expression obj) {
             System.Exception exception = null;
             return LoadFromFile(fileName, out obj, out exception);
         }
-        
+
         public static expression LoadFromFile(string fileName) {
             return LoadFromFile(fileName, Encoding.UTF8);
         }
-        
+
         public static expression LoadFromFile(string fileName, System.Text.Encoding encoding) {
             System.IO.FileStream file = null;
             System.IO.StreamReader sr = null;
@@ -454,44 +457,46 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
         }
         #endregion
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:njection-configuration")]
-    public enum ConfigurationNodeType {
-        
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:njection-configuration")]
+    public enum ConfigurationNodeType
+    {
+
         /// <remarks/>
         Constant,
-        
+
         /// <remarks/>
         Parameter,
-        
+
         /// <remarks/>
         New,
-        
+
         /// <remarks/>
         Lambda,
-        
+
         /// <remarks/>
         Expression,
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="urn:njection-configuration")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="urn:njection-configuration", IsNullable=false)]
-    public partial class njection_configuration {
-        
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:njection-configuration")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:njection-configuration", IsNullable = false)]
+    public partial class njection_configuration
+    {
+
         private LambdaExpressionConfiguration lambdaField;
-        
+
         private static System.Xml.Serialization.XmlSerializer serializer;
-        
+
         public njection_configuration() {
             this.lambdaField = new LambdaExpressionConfiguration();
         }
-        
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
         public LambdaExpressionConfiguration lambda {
             get {
                 return this.lambdaField;
@@ -500,7 +505,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 this.lambdaField = value;
             }
         }
-        
+
         private static System.Xml.Serialization.XmlSerializer Serializer {
             get {
                 if ((serializer == null)) {
@@ -509,7 +514,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 return serializer;
             }
         }
-        
+
         #region Serialize/Deserialize
         /// <summary>
         /// Serializes current njection_configuration object into an XML document
@@ -537,11 +542,11 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 }
             }
         }
-        
+
         public virtual string Serialize() {
             return Serialize(Encoding.UTF8);
         }
-        
+
         /// <summary>
         /// Deserializes workflow markup into an njection_configuration object
         /// </summary>
@@ -561,12 +566,12 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 return false;
             }
         }
-        
+
         public static bool Deserialize(string xml, out njection_configuration obj) {
             System.Exception exception = null;
             return Deserialize(xml, out obj, out exception);
         }
-        
+
         public static njection_configuration Deserialize(string xml) {
             System.IO.StringReader stringReader = null;
             try {
@@ -579,7 +584,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 }
             }
         }
-        
+
         /// <summary>
         /// Serializes current njection_configuration object into file
         /// </summary>
@@ -597,15 +602,15 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 return false;
             }
         }
-        
+
         public virtual bool SaveToFile(string fileName, out System.Exception exception) {
             return SaveToFile(fileName, Encoding.UTF8, out exception);
         }
-        
+
         public virtual void SaveToFile(string fileName) {
             SaveToFile(fileName, Encoding.UTF8);
         }
-        
+
         public virtual void SaveToFile(string fileName, System.Text.Encoding encoding) {
             System.IO.StreamWriter streamWriter = null;
             try {
@@ -620,7 +625,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 }
             }
         }
-        
+
         /// <summary>
         /// Deserializes xml markup from file into an njection_configuration object
         /// </summary>
@@ -640,20 +645,20 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 return false;
             }
         }
-        
+
         public static bool LoadFromFile(string fileName, out njection_configuration obj, out System.Exception exception) {
             return LoadFromFile(fileName, Encoding.UTF8, out obj, out exception);
         }
-        
+
         public static bool LoadFromFile(string fileName, out njection_configuration obj) {
             System.Exception exception = null;
             return LoadFromFile(fileName, out obj, out exception);
         }
-        
+
         public static njection_configuration LoadFromFile(string fileName) {
             return LoadFromFile(fileName, Encoding.UTF8);
         }
-        
+
         public static njection_configuration LoadFromFile(string fileName, System.Text.Encoding encoding) {
             System.IO.FileStream file = null;
             System.IO.StreamReader sr = null;
@@ -676,29 +681,32 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
         }
         #endregion
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:njection-configuration")]
-    public partial class LambdaExpressionConfiguration : ExpressionConfiguration {
-        
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:njection-configuration")]
+    public partial class LambdaExpressionConfiguration : ExpressionConfiguration
+    {
+
         private ExpressionConfiguration expressionField;
-        
+
         private List<ParameterExpressionConfiguration> argumentsField;
-        
+
         private ConfigurationNodeType nodeTypeField;
-        
+
         private bool nodeTypeFieldSpecified;
-        
+
+        private string nameField;
+
         private static System.Xml.Serialization.XmlSerializer serializer;
-        
+
         public LambdaExpressionConfiguration() {
             this.argumentsField = new List<ParameterExpressionConfiguration>();
             this.nodeTypeField = ConfigurationNodeType.Lambda;
         }
-        
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
         public ExpressionConfiguration expression {
             get {
                 return this.expressionField;
@@ -707,9 +715,9 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 this.expressionField = value;
             }
         }
-        
-        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("parameter", IsNullable=false)]
+
+        [System.Xml.Serialization.XmlArrayAttribute(Order = 1)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("parameter", IsNullable = false)]
         public List<ParameterExpressionConfiguration> arguments {
             get {
                 return this.argumentsField;
@@ -718,7 +726,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 this.argumentsField = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public ConfigurationNodeType nodeType {
             get {
@@ -728,7 +736,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 this.nodeTypeField = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool nodeTypeSpecified {
             get {
@@ -738,7 +746,17 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 this.nodeTypeFieldSpecified = value;
             }
         }
-        
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+
         private static System.Xml.Serialization.XmlSerializer Serializer {
             get {
                 if ((serializer == null)) {
@@ -747,7 +765,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 return serializer;
             }
         }
-        
+
         #region Serialize/Deserialize
         /// <summary>
         /// Serializes current LambdaExpressionConfiguration object into an XML document
@@ -775,11 +793,11 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 }
             }
         }
-        
+
         public virtual string Serialize() {
             return Serialize(Encoding.UTF8);
         }
-        
+
         /// <summary>
         /// Deserializes workflow markup into an LambdaExpressionConfiguration object
         /// </summary>
@@ -799,12 +817,12 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 return false;
             }
         }
-        
+
         public static bool Deserialize(string xml, out LambdaExpressionConfiguration obj) {
             System.Exception exception = null;
             return Deserialize(xml, out obj, out exception);
         }
-        
+
         public static LambdaExpressionConfiguration Deserialize(string xml) {
             System.IO.StringReader stringReader = null;
             try {
@@ -817,7 +835,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 }
             }
         }
-        
+
         /// <summary>
         /// Serializes current LambdaExpressionConfiguration object into file
         /// </summary>
@@ -835,15 +853,15 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 return false;
             }
         }
-        
+
         public virtual bool SaveToFile(string fileName, out System.Exception exception) {
             return SaveToFile(fileName, Encoding.UTF8, out exception);
         }
-        
+
         public virtual void SaveToFile(string fileName) {
             SaveToFile(fileName, Encoding.UTF8);
         }
-        
+
         public virtual void SaveToFile(string fileName, System.Text.Encoding encoding) {
             System.IO.StreamWriter streamWriter = null;
             try {
@@ -858,7 +876,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 }
             }
         }
-        
+
         /// <summary>
         /// Deserializes xml markup from file into an LambdaExpressionConfiguration object
         /// </summary>
@@ -878,20 +896,20 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 return false;
             }
         }
-        
+
         public static bool LoadFromFile(string fileName, out LambdaExpressionConfiguration obj, out System.Exception exception) {
             return LoadFromFile(fileName, Encoding.UTF8, out obj, out exception);
         }
-        
+
         public static bool LoadFromFile(string fileName, out LambdaExpressionConfiguration obj) {
             System.Exception exception = null;
             return LoadFromFile(fileName, out obj, out exception);
         }
-        
+
         public static LambdaExpressionConfiguration LoadFromFile(string fileName) {
             return LoadFromFile(fileName, Encoding.UTF8);
         }
-        
+
         public static LambdaExpressionConfiguration LoadFromFile(string fileName, System.Text.Encoding encoding) {
             System.IO.FileStream file = null;
             System.IO.StreamReader sr = null;
@@ -914,7 +932,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
         }
         #endregion
     }
-    
+
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(NewExpressionConfiguration))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ConstantExpressionConfiguration))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ParameterExpressionConfiguration))]
@@ -922,13 +940,14 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:njection-configuration")]
-    public abstract partial class ExpressionConfiguration {
-        
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:njection-configuration")]
+    public abstract partial class ExpressionConfiguration
+    {
+
         private string typeField;
-        
+
         private static System.Xml.Serialization.XmlSerializer serializer;
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string type {
             get {
@@ -938,7 +957,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 this.typeField = value;
             }
         }
-        
+
         private static System.Xml.Serialization.XmlSerializer Serializer {
             get {
                 if ((serializer == null)) {
@@ -947,7 +966,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 return serializer;
             }
         }
-        
+
         #region Serialize/Deserialize
         /// <summary>
         /// Serializes current ExpressionConfiguration object into an XML document
@@ -975,11 +994,11 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 }
             }
         }
-        
+
         public virtual string Serialize() {
             return Serialize(Encoding.UTF8);
         }
-        
+
         /// <summary>
         /// Deserializes workflow markup into an ExpressionConfiguration object
         /// </summary>
@@ -999,12 +1018,12 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 return false;
             }
         }
-        
+
         public static bool Deserialize(string xml, out ExpressionConfiguration obj) {
             System.Exception exception = null;
             return Deserialize(xml, out obj, out exception);
         }
-        
+
         public static ExpressionConfiguration Deserialize(string xml) {
             System.IO.StringReader stringReader = null;
             try {
@@ -1017,7 +1036,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 }
             }
         }
-        
+
         /// <summary>
         /// Serializes current ExpressionConfiguration object into file
         /// </summary>
@@ -1035,15 +1054,15 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 return false;
             }
         }
-        
+
         public virtual bool SaveToFile(string fileName, out System.Exception exception) {
             return SaveToFile(fileName, Encoding.UTF8, out exception);
         }
-        
+
         public virtual void SaveToFile(string fileName) {
             SaveToFile(fileName, Encoding.UTF8);
         }
-        
+
         public virtual void SaveToFile(string fileName, System.Text.Encoding encoding) {
             System.IO.StreamWriter streamWriter = null;
             try {
@@ -1058,7 +1077,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 }
             }
         }
-        
+
         /// <summary>
         /// Deserializes xml markup from file into an ExpressionConfiguration object
         /// </summary>
@@ -1078,20 +1097,20 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 return false;
             }
         }
-        
+
         public static bool LoadFromFile(string fileName, out ExpressionConfiguration obj, out System.Exception exception) {
             return LoadFromFile(fileName, Encoding.UTF8, out obj, out exception);
         }
-        
+
         public static bool LoadFromFile(string fileName, out ExpressionConfiguration obj) {
             System.Exception exception = null;
             return LoadFromFile(fileName, out obj, out exception);
         }
-        
+
         public static ExpressionConfiguration LoadFromFile(string fileName) {
             return LoadFromFile(fileName, Encoding.UTF8);
         }
-        
+
         public static ExpressionConfiguration LoadFromFile(string fileName, System.Text.Encoding encoding) {
             System.IO.FileStream file = null;
             System.IO.StreamReader sr = null;
@@ -1114,28 +1133,29 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
         }
         #endregion
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:njection-configuration")]
-    public partial class NewExpressionConfiguration : ExpressionConfiguration {
-        
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:njection-configuration")]
+    public partial class NewExpressionConfiguration : ExpressionConfiguration
+    {
+
         private List<ParameterExpressionConfiguration> argumentsField;
-        
+
         private ConfigurationNodeType nodeTypeField;
-        
+
         private bool nodeTypeFieldSpecified;
-        
+
         private static System.Xml.Serialization.XmlSerializer serializer;
-        
+
         public NewExpressionConfiguration() {
             this.argumentsField = new List<ParameterExpressionConfiguration>();
             this.nodeTypeField = ConfigurationNodeType.New;
         }
-        
-        [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("parameter", typeof(ParameterExpressionConfiguration), IsNullable=false)]
+
+        [System.Xml.Serialization.XmlArrayAttribute(Order = 0)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("parameter", typeof(ParameterExpressionConfiguration), IsNullable = false)]
         public List<ParameterExpressionConfiguration> arguments {
             get {
                 return this.argumentsField;
@@ -1144,7 +1164,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 this.argumentsField = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public ConfigurationNodeType nodeType {
             get {
@@ -1154,7 +1174,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 this.nodeTypeField = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool nodeTypeSpecified {
             get {
@@ -1164,7 +1184,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 this.nodeTypeFieldSpecified = value;
             }
         }
-        
+
         private static System.Xml.Serialization.XmlSerializer Serializer {
             get {
                 if ((serializer == null)) {
@@ -1173,7 +1193,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 return serializer;
             }
         }
-        
+
         #region Serialize/Deserialize
         /// <summary>
         /// Serializes current NewExpressionConfiguration object into an XML document
@@ -1201,11 +1221,11 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 }
             }
         }
-        
+
         public virtual string Serialize() {
             return Serialize(Encoding.UTF8);
         }
-        
+
         /// <summary>
         /// Deserializes workflow markup into an NewExpressionConfiguration object
         /// </summary>
@@ -1225,12 +1245,12 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 return false;
             }
         }
-        
+
         public static bool Deserialize(string xml, out NewExpressionConfiguration obj) {
             System.Exception exception = null;
             return Deserialize(xml, out obj, out exception);
         }
-        
+
         public static NewExpressionConfiguration Deserialize(string xml) {
             System.IO.StringReader stringReader = null;
             try {
@@ -1243,7 +1263,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 }
             }
         }
-        
+
         /// <summary>
         /// Serializes current NewExpressionConfiguration object into file
         /// </summary>
@@ -1261,15 +1281,15 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 return false;
             }
         }
-        
+
         public virtual bool SaveToFile(string fileName, out System.Exception exception) {
             return SaveToFile(fileName, Encoding.UTF8, out exception);
         }
-        
+
         public virtual void SaveToFile(string fileName) {
             SaveToFile(fileName, Encoding.UTF8);
         }
-        
+
         public virtual void SaveToFile(string fileName, System.Text.Encoding encoding) {
             System.IO.StreamWriter streamWriter = null;
             try {
@@ -1284,7 +1304,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 }
             }
         }
-        
+
         /// <summary>
         /// Deserializes xml markup from file into an NewExpressionConfiguration object
         /// </summary>
@@ -1304,20 +1324,20 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 return false;
             }
         }
-        
+
         public static bool LoadFromFile(string fileName, out NewExpressionConfiguration obj, out System.Exception exception) {
             return LoadFromFile(fileName, Encoding.UTF8, out obj, out exception);
         }
-        
+
         public static bool LoadFromFile(string fileName, out NewExpressionConfiguration obj) {
             System.Exception exception = null;
             return LoadFromFile(fileName, out obj, out exception);
         }
-        
+
         public static NewExpressionConfiguration LoadFromFile(string fileName) {
             return LoadFromFile(fileName, Encoding.UTF8);
         }
-        
+
         public static NewExpressionConfiguration LoadFromFile(string fileName, System.Text.Encoding encoding) {
             System.IO.FileStream file = null;
             System.IO.StreamReader sr = null;
@@ -1340,27 +1360,28 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
         }
         #endregion
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:njection-configuration")]
-    public partial class ParameterExpressionConfiguration : ExpressionConfiguration {
-        
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:njection-configuration")]
+    public partial class ParameterExpressionConfiguration : ExpressionConfiguration
+    {
+
         private ConfigurationNodeType nodeTypeField;
-        
+
         private bool nodeTypeFieldSpecified;
-        
+
         private string nameField;
-        
+
         private string refField;
-        
+
         private static System.Xml.Serialization.XmlSerializer serializer;
-        
+
         public ParameterExpressionConfiguration() {
             this.nodeTypeField = ConfigurationNodeType.Parameter;
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public ConfigurationNodeType nodeType {
             get {
@@ -1370,7 +1391,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 this.nodeTypeField = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool nodeTypeSpecified {
             get {
@@ -1380,7 +1401,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 this.nodeTypeFieldSpecified = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string name {
             get {
@@ -1390,7 +1411,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 this.nameField = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string @ref {
             get {
@@ -1400,7 +1421,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 this.refField = value;
             }
         }
-        
+
         private static System.Xml.Serialization.XmlSerializer Serializer {
             get {
                 if ((serializer == null)) {
@@ -1409,7 +1430,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 return serializer;
             }
         }
-        
+
         #region Serialize/Deserialize
         /// <summary>
         /// Serializes current ParameterExpressionConfiguration object into an XML document
@@ -1437,11 +1458,11 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 }
             }
         }
-        
+
         public virtual string Serialize() {
             return Serialize(Encoding.UTF8);
         }
-        
+
         /// <summary>
         /// Deserializes workflow markup into an ParameterExpressionConfiguration object
         /// </summary>
@@ -1461,12 +1482,12 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 return false;
             }
         }
-        
+
         public static bool Deserialize(string xml, out ParameterExpressionConfiguration obj) {
             System.Exception exception = null;
             return Deserialize(xml, out obj, out exception);
         }
-        
+
         public static ParameterExpressionConfiguration Deserialize(string xml) {
             System.IO.StringReader stringReader = null;
             try {
@@ -1479,7 +1500,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 }
             }
         }
-        
+
         /// <summary>
         /// Serializes current ParameterExpressionConfiguration object into file
         /// </summary>
@@ -1497,15 +1518,15 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 return false;
             }
         }
-        
+
         public virtual bool SaveToFile(string fileName, out System.Exception exception) {
             return SaveToFile(fileName, Encoding.UTF8, out exception);
         }
-        
+
         public virtual void SaveToFile(string fileName) {
             SaveToFile(fileName, Encoding.UTF8);
         }
-        
+
         public virtual void SaveToFile(string fileName, System.Text.Encoding encoding) {
             System.IO.StreamWriter streamWriter = null;
             try {
@@ -1520,7 +1541,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 }
             }
         }
-        
+
         /// <summary>
         /// Deserializes xml markup from file into an ParameterExpressionConfiguration object
         /// </summary>
@@ -1540,20 +1561,20 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 return false;
             }
         }
-        
+
         public static bool LoadFromFile(string fileName, out ParameterExpressionConfiguration obj, out System.Exception exception) {
             return LoadFromFile(fileName, Encoding.UTF8, out obj, out exception);
         }
-        
+
         public static bool LoadFromFile(string fileName, out ParameterExpressionConfiguration obj) {
             System.Exception exception = null;
             return LoadFromFile(fileName, out obj, out exception);
         }
-        
+
         public static ParameterExpressionConfiguration LoadFromFile(string fileName) {
             return LoadFromFile(fileName, Encoding.UTF8);
         }
-        
+
         public static ParameterExpressionConfiguration LoadFromFile(string fileName, System.Text.Encoding encoding) {
             System.IO.FileStream file = null;
             System.IO.StreamReader sr = null;
@@ -1576,25 +1597,26 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
         }
         #endregion
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:njection-configuration")]
-    public partial class ConstantExpressionConfiguration : ExpressionConfiguration {
-        
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:njection-configuration")]
+    public partial class ConstantExpressionConfiguration : ExpressionConfiguration
+    {
+
         private ConfigurationNodeType nodeTypeField;
-        
+
         private bool nodeTypeFieldSpecified;
-        
+
         private string valueField;
-        
+
         private static System.Xml.Serialization.XmlSerializer serializer;
-        
+
         public ConstantExpressionConfiguration() {
             this.nodeTypeField = ConfigurationNodeType.Constant;
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public ConfigurationNodeType nodeType {
             get {
@@ -1604,7 +1626,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 this.nodeTypeField = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool nodeTypeSpecified {
             get {
@@ -1614,7 +1636,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 this.nodeTypeFieldSpecified = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string value {
             get {
@@ -1624,7 +1646,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 this.valueField = value;
             }
         }
-        
+
         private static System.Xml.Serialization.XmlSerializer Serializer {
             get {
                 if ((serializer == null)) {
@@ -1633,7 +1655,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 return serializer;
             }
         }
-        
+
         #region Serialize/Deserialize
         /// <summary>
         /// Serializes current ConstantExpressionConfiguration object into an XML document
@@ -1661,11 +1683,11 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 }
             }
         }
-        
+
         public virtual string Serialize() {
             return Serialize(Encoding.UTF8);
         }
-        
+
         /// <summary>
         /// Deserializes workflow markup into an ConstantExpressionConfiguration object
         /// </summary>
@@ -1685,12 +1707,12 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 return false;
             }
         }
-        
+
         public static bool Deserialize(string xml, out ConstantExpressionConfiguration obj) {
             System.Exception exception = null;
             return Deserialize(xml, out obj, out exception);
         }
-        
+
         public static ConstantExpressionConfiguration Deserialize(string xml) {
             System.IO.StringReader stringReader = null;
             try {
@@ -1703,7 +1725,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 }
             }
         }
-        
+
         /// <summary>
         /// Serializes current ConstantExpressionConfiguration object into file
         /// </summary>
@@ -1721,15 +1743,15 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 return false;
             }
         }
-        
+
         public virtual bool SaveToFile(string fileName, out System.Exception exception) {
             return SaveToFile(fileName, Encoding.UTF8, out exception);
         }
-        
+
         public virtual void SaveToFile(string fileName) {
             SaveToFile(fileName, Encoding.UTF8);
         }
-        
+
         public virtual void SaveToFile(string fileName, System.Text.Encoding encoding) {
             System.IO.StreamWriter streamWriter = null;
             try {
@@ -1744,7 +1766,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 }
             }
         }
-        
+
         /// <summary>
         /// Deserializes xml markup from file into an ConstantExpressionConfiguration object
         /// </summary>
@@ -1764,20 +1786,20 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 return false;
             }
         }
-        
+
         public static bool LoadFromFile(string fileName, out ConstantExpressionConfiguration obj, out System.Exception exception) {
             return LoadFromFile(fileName, Encoding.UTF8, out obj, out exception);
         }
-        
+
         public static bool LoadFromFile(string fileName, out ConstantExpressionConfiguration obj) {
             System.Exception exception = null;
             return LoadFromFile(fileName, out obj, out exception);
         }
-        
+
         public static ConstantExpressionConfiguration LoadFromFile(string fileName) {
             return LoadFromFile(fileName, Encoding.UTF8);
         }
-        
+
         public static ConstantExpressionConfiguration LoadFromFile(string fileName, System.Text.Encoding encoding) {
             System.IO.FileStream file = null;
             System.IO.StreamReader sr = null;

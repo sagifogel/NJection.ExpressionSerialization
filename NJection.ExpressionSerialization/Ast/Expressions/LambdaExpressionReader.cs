@@ -10,13 +10,13 @@ namespace NJection.ExpressionSerialization.Ast.Expressions
 {
     public partial class LambdaExpressionReader
     {
-        private Expression _body = null;
         private List<ParameterExpression> _parameters = null;
 
         partial void ReadConfiguration(LambdaExpressionConfiguration configuration) {
             InternalType = Type.GetType(configuration.type);
+            Name = configuration.name;
             _parameters = new List<ParameterExpression>(configuration.arguments.Count);
-
+          
             configuration.arguments
                          .ForEach(a => {
                              var parameter = a.Accept(this, Visitor).ReduceExtensions() as ParameterExpression;
@@ -26,23 +26,21 @@ namespace NJection.ExpressionSerialization.Ast.Expressions
                              _parameters.Add(parameter);
                          });
 
-            _body = configuration.expression.Accept(this, Visitor);
+            Body = configuration.expression.Accept(this, Visitor);
         }
 
-        public IEnumerable<ParameterExpression> Parameters {
+        internal string Name { get; private set; } 
+
+        internal Expression Body { get; private set; } 
+
+        internal IEnumerable<ParameterExpression> Parameters {
             get {
                 return _parameters;
             }
         }
 
         public override Expression Reduce() {
-            return Expression.Lambda(_body, _parameters);
-        }
-
-        public TDelegate Compile<TDelegate>() where TDelegate : class {
-            var lambda = Reduce() as LambdaExpression;
-
-            return lambda.Compile() as TDelegate;
+            return Expression.Lambda(Body, _parameters);
         }
     }
 }
