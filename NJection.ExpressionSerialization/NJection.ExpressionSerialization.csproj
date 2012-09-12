@@ -96,7 +96,7 @@
     </None>
     <None Include="Ast\Configuration\ConfigurationDefintion.xsd">
       <SubType>Designer</SubType>
-      <CustomToolNamespace>NJection.ExpressionReader.Ast.Configuration</CustomToolNamespace>
+      <CustomToolNamespace>NJection.ExpressionSerialization.Ast.Configuration</CustomToolNamespace>
       <Generator>Xsd2CodeCustomTool</Generator>
       <LastGenOutput>ConfigurationDefintion.Designer.cs</LastGenOutput>
     </None>

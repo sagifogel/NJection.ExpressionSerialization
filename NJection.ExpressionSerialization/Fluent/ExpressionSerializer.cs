@@ -12,7 +12,7 @@ namespace NJection.ExpressionSerialization
     {
         public Expression<TDelegate> Deserialize<[DelegateConstraintAttribute]TDelegate>(string filePath) where TDelegate : class {
             var visitor = new ConfigurationVisitor();
-            var configuration = njection_configuration.LoadFromFile(Path.GetFullPath(filePath));
+            var configuration = njection_configuration.LoadFromFile(filePath);
             var lambda = configuration.lambda.Accept(null, visitor) as LambdaExpressionReader;
 
             return Expression.Lambda<TDelegate>(lambda.Body, lambda.Name, lambda.Parameters);
