@@ -5,6 +5,7 @@ using NJection.ExpressionSerialization.Ast.Expressions;
 using NJection.ExpressionSerialization.Ast.Visitors;
 using System;
 using System.IO;
+using NJection.ExpressionReader.Ast.Visitors;
 
 namespace NJection.ExpressionSerialization
 {
@@ -19,7 +20,9 @@ namespace NJection.ExpressionSerialization
         }
 
         public LambdaExpressionConfiguration Serialize(LambdaExpression lambda) {
-            throw new NotImplementedException();
+            var serializer = new SerializerVisitor(lambda);
+
+            return serializer.Seriailize();
         }
     }
 }
