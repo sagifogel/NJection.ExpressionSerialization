@@ -8,8 +8,8 @@
     <ProjectGuid>{0D0FC91A-5897-4129-A643-5111A25DD1A6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NJection.ExpressionReader</RootNamespace>
-    <AssemblyName>NJection.ExpressionReader</AssemblyName>
+    <RootNamespace>NJection.ExpressionSerialization</RootNamespace>
+    <AssemblyName>NJection.ExpressionSerialization</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -75,11 +75,21 @@
     <Compile Include="Ast\Scope\IScopeChild.cs" />
     <Compile Include="Ast\Scope\Scope.cs" />
     <Compile Include="Ast\Scope\Variable.cs" />
-    <Compile Include="Ast\Visitors\IConfigurationVisitor.ext.cs" />
-    <Compile Include="Ast\Visitors\IConfigurationVisitor.cs">
+    <Compile Include="Ast\Visitors\ExpressionConfigurationVisitor.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>IConfigurationVisitor.tt</DependentUpon>
+      <DependentUpon>ExpressionConfigurationVisitor.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ast\Visitors\IExpressionConfigurationVisitor.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IExpressionConfigurationVisitor.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ast\Visitors\IExpressionConfigurationVisitor.ext.cs" />
+    <Compile Include="Ast\Visitors\ISerializerVisitor.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ISerializerVisitor.tt</DependentUpon>
     </Compile>
     <Compile Include="Ast\Visitors\SerializerVisitor.cs" />
     <Compile Include="DelegateConstraintAttribute.cs" />
@@ -113,9 +123,17 @@
     <None Include="Ast\Configuration\ModelDefinition.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Ast\Visitors\IConfigurationVisitor.tt">
+    <None Include="Ast\Visitors\ExpressionConfigurationVisitor.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>IConfigurationVisitor.cs</LastGenOutput>
+      <LastGenOutput>ExpressionConfigurationVisitor.cs</LastGenOutput>
+    </None>
+    <None Include="Ast\Visitors\ISerializerVisitor.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ISerializerVisitor.cs</LastGenOutput>
+    </None>
+    <None Include="Ast\Visitors\IExpressionConfigurationVisitor.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>IExpressionConfigurationVisitor.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

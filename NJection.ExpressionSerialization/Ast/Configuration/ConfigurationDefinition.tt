@@ -15,7 +15,7 @@ namespace NJection.ExpressionSerialization.Ast.Configuration
 	{	
 #>	<#= Environment.NewLine #>	public partial class <#= item.name #>Configuration 
 	{
-		internal override Expression Accept(IScope scope, IConfigurationVisitor visitor) {
+		internal override Expression Accept(IScope scope, IExpressionConfigurationVisitor visitor) {
             return visitor.Visit(scope, this);
         }
 	}<#= Environment.NewLine #><#

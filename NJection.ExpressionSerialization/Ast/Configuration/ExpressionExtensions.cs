@@ -10,6 +10,6 @@ namespace NJection.ExpressionSerialization.Ast.Configuration
 {
     public abstract partial class ExpressionConfiguration
     {
-        internal abstract Expression Accept(IScope scope, IConfigurationVisitor visitor);
+        internal abstract Expression Accept(IScope scope, IExpressionConfigurationVisitor visitor);
     }
 }

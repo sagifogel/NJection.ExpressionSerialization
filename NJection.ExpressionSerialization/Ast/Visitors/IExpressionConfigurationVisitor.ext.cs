@@ -7,7 +7,7 @@ using NJection.ExpressionSerialization.Ast.Expressions;
 
 namespace NJection.ExpressionSerialization.Ast.Visitors
 {
-    public partial interface IConfigurationVisitor
+    public partial interface IExpressionConfigurationVisitor
     {
     }
 }

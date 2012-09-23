@@ -9,7 +9,7 @@ namespace NJection.ExpressionSerialization.Ast.Expressions
 	{	
 		private LambdaExpressionConfiguration _configuration = null;
 
-		internal LambdaExpressionReader(LambdaExpressionConfiguration configuration, IScope scope, IConfigurationVisitor visitor) 
+		internal LambdaExpressionReader(LambdaExpressionConfiguration configuration, IScope scope, IExpressionConfigurationVisitor visitor) 
 			: base(scope, visitor) {
 
 			_configuration = configuration;
@@ -27,7 +27,7 @@ namespace NJection.ExpressionSerialization.Ast.Expressions
 	{	
 		private ConstantExpressionConfiguration _configuration = null;
 
-		internal ConstantExpressionReader(ConstantExpressionConfiguration configuration, IScope scope, IConfigurationVisitor visitor) 
+		internal ConstantExpressionReader(ConstantExpressionConfiguration configuration, IScope scope, IExpressionConfigurationVisitor visitor) 
 			: base(scope, visitor) {
 
 			_configuration = configuration;
@@ -45,7 +45,7 @@ namespace NJection.ExpressionSerialization.Ast.Expressions
 	{	
 		private NewExpressionConfiguration _configuration = null;
 
-		internal NewExpressionReader(NewExpressionConfiguration configuration, IScope scope, IConfigurationVisitor visitor) 
+		internal NewExpressionReader(NewExpressionConfiguration configuration, IScope scope, IExpressionConfigurationVisitor visitor) 
 			: base(scope, visitor) {
 
 			_configuration = configuration;
@@ -63,7 +63,7 @@ namespace NJection.ExpressionSerialization.Ast.Expressions
 	{	
 		private ParameterExpressionConfiguration _configuration = null;
 
-		internal ParameterExpressionReader(ParameterExpressionConfiguration configuration, IScope scope, IConfigurationVisitor visitor) 
+		internal ParameterExpressionReader(ParameterExpressionConfiguration configuration, IScope scope, IExpressionConfigurationVisitor visitor) 
 			: base(scope, visitor) {
 
 			_configuration = configuration;

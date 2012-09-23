@@ -16,7 +16,7 @@ using NJection.ExpressionSerialization.Ast.Expressions;
 
 namespace NJection.ExpressionSerialization.Ast.Visitors
 {
-	public partial interface IConfigurationVisitor
+	public partial interface IExpressionConfigurationVisitor
 	{
 <#	foreach (var item in model.expression) 	{	
 		var name = item.name;
@@ -25,17 +25,6 @@ namespace NJection.ExpressionSerialization.Ast.Visitors
 <#
 	}    
 #>
-	}
-	
-	public class ConfigurationVisitor : IConfigurationVisitor
-    {<#	foreach (var item in model.expression) 	{	
-		var name = item.name;
-		var camelCaseName =  string.Join("", name.Take(1).Select(i => i.ToString().ToLower()).Concat(name.Skip(1).Select(i => i.ToString())));
-#><#= Environment.NewLine #>		public Expression Visit(IScope scope, <#= name #>Configuration configuration) {
-			return ExpressionReader.<#= item.nodeType #>(configuration, scope, this);
-		}
-<#
-	}#>
 	}
 }
 <#+ 

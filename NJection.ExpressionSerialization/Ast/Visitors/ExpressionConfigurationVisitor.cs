@@ -6,15 +6,7 @@ using NJection.ExpressionSerialization.Ast.Expressions;
 
 namespace NJection.ExpressionSerialization.Ast.Visitors
 {
-	public partial interface IConfigurationVisitor
-	{
-		Expression Visit(IScope scope, LambdaExpressionConfiguration configuration);
-		Expression Visit(IScope scope, ConstantExpressionConfiguration configuration);
-		Expression Visit(IScope scope, NewExpressionConfiguration configuration);
-		Expression Visit(IScope scope, ParameterExpressionConfiguration configuration);
-	}
-	
-	public class ConfigurationVisitor : IConfigurationVisitor
+	public class ExpressionConfigurationVisitor : IExpressionConfigurationVisitor
     {
 		public Expression Visit(IScope scope, LambdaExpressionConfiguration configuration) {
 			return ExpressionReader.Lambda(configuration, scope, this);

@@ -8,7 +8,7 @@ namespace NJection.ExpressionSerialization.Ast.Expressions
 {
     public abstract class Scope : AbstractExpression, IScope
     {
-        public Scope(IScope scope, IConfigurationVisitor visitor)
+        public Scope(IScope scope, IExpressionConfigurationVisitor visitor)
             : base(scope, visitor) {
             
             VariablesStore = new Dictionary<string, Variable>();
