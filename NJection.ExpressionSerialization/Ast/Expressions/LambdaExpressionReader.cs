@@ -13,8 +13,8 @@ namespace NJection.ExpressionSerialization.Ast.Expressions
         private List<ParameterExpression> _parameters = null;
 
         partial void ReadConfiguration(LambdaExpressionConfiguration configuration) {
-            InternalType = Type.GetType(configuration.type);
             Name = configuration.name;
+            InternalType = Type.GetType(configuration.type);
             _parameters = new List<ParameterExpression>(configuration.arguments.Count);
           
             configuration.arguments

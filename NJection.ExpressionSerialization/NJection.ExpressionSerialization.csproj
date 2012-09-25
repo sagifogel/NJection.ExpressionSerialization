@@ -88,14 +88,14 @@
     <Compile Include="Ast\Visitors\IExpressionConfigurationVisitor.ext.cs" />
     <Compile Include="Ast\Visitors\SerializerVisitor.cs" />
     <Compile Include="DelegateConstraintAttribute.cs" />
-    <Compile Include="Ast\Configuration\ExpressionExtensions.cs" />
+    <Compile Include="Ast\Configuration\ExpressionConfiguration.cs" />
     <Compile Include="Extensions\CollectionExtensions.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Extensions\ReflectionExtensions.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Fluent\ExpressionSerializer.cs" />
+    <Compile Include="ExpressionSerializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QualifiedNameResolver.cs" />
   </ItemGroup>
