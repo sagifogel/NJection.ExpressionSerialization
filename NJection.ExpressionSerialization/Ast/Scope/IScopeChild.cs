@@ -1,4 +1,4 @@
-﻿namespace NJection.ExpressionSerialization
+﻿namespace NJection.ExpressionSerialization.Ast
 {
     public interface IScopeChild
     {

@@ -4,8 +4,9 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
+using NJection.ExpressionSerialization;
 
-namespace NJection.ExpressionSerialization.Extensions
+namespace NJection.Extensions
 {
     internal static class ReflectionUtils
     {
@@ -220,6 +221,10 @@ namespace NJection.ExpressionSerialization.Extensions
             }
 
             return false;
+        }
+
+        internal static string GetQualifiedName(this Type type) {
+            return new QualifiedNameResolver().Resolve(type);
         }
     }
 }

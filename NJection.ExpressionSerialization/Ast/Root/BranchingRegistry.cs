@@ -2,7 +2,7 @@
 using System.Collections.Concurrent;
 using System.Linq.Expressions;
 
-namespace NJection.ExpressionSerialization
+namespace NJection.ExpressionSerialization.Ast
 {
     internal class BranchingRegistry : IBranchingRegistry
     {

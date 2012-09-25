@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<njection_configuration xmlns="urn:njection-configuration">
+<njection_configuration xmlns="urn:njection-configuration" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <lambda type="System.Func`2[System.Int32, [Tester.Test, Tester]]">
-    <expression xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="NewExpressionConfiguration" type="Tester.Test, Tester">
+    <expression  xsi:type="NewExpressionConfiguration" type="Tester.Test, Tester">
       <arguments>
         <parameter ref="value" />
       </arguments>

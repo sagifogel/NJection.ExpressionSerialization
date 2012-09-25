@@ -14,7 +14,7 @@ namespace NJection.ExpressionSerialization.Ast.Expressions
 {
 	public abstract class ExpressionReader : Expression
 	{<#	foreach (var item in model.expression) 
-{ #><#= Environment.NewLine #>		public static Expression <#= item.nodeType #>(<#= item.name #>Configuration configuration, IScope scope, IConfigurationVisitor visitor) {
+{ #><#= Environment.NewLine #>		public static Expression <#= item.nodeType #>(<#= item.name #>Configuration configuration, IScope scope, IExpressionConfigurationVisitor visitor) {
 			return new <#= item.name #>Reader(configuration, scope, visitor);
 		}<#= Environment.NewLine #><# }#>
 	}

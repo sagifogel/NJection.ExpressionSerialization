@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
-using NJection.ExpressionSerialization.Extensions;
+using NJection.Extensions;
 using NJection.ExpressionSerialization.Ast.Configuration;
 
-namespace NJection.ExpressionSerialization.Ast.Visitors
+namespace NJection.ExpressionSerialization.Visitors
 {
-    public class SerializerVisitor : ISerializerVisitor
+    public class SerializerVisitor : ExpressionVisitor
     {
         public LambdaExpressionConfiguration Visit(LambdaExpression lambdaExpression) {
             return new LambdaExpressionConfiguration {
-                arguments = lambdaExpression.Parameters.Select(p => Visit(p)).ToList(),
-                expression = Visit(lambdaExpression.Body),
+                type = lambdaExpression.Type.GetQualifiedName(),
+                arguments = lambdaExpression.Parameters.Select(p => Visit(p) as ParameterExpressionConfiguration).ToList(),
+                expression = Visit(lambdaExpression.Body) as ExpressionConfiguration,
                 name = lambdaExpression.Name
             };
         }
@@ -22,16 +23,22 @@ namespace NJection.ExpressionSerialization.Ast.Visitors
             throw new NotImplementedException();
         }
 
-        public NewExpressionConfiguration Visit(NewExpression newExpression) {
-            throw new NotImplementedException();
+        protected override Expression VisitNew(NewExpression node) {
+            var arguments = node.Arguments.Cast<ParameterExpression>()
+                                          .Select(a => Visit(a))
+                                          .ToListOf<ParameterExpressionConfiguration>();
+
+            return new NewExpressionConfiguration {
+                arguments = arguments,
+                type = node.Type.GetQualifiedName()
+            };
         }
 
-        public ParameterExpressionConfiguration Visit(ParameterExpression parameterExpression) {
-            throw new NotImplementedException();
-        }
-
-        public ExpressionConfiguration Visit(Expression expression) {
-            throw new NotImplementedException();
+        protected override Expression VisitParameter(ParameterExpression node) {
+            return new ParameterExpressionConfiguration {
+                name = node.Name,
+                type = node.Type.GetQualifiedName()
+            };
         }
     }
 }

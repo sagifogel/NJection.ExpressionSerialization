@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
 
-namespace NJection.ExpressionSerialization
+namespace NJection.ExpressionSerialization.Ast
 {
     public interface IBranchingRegistry
     {

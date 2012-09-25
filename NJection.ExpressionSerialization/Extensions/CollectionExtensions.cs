@@ -4,7 +4,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace NJection.ExpressionSerialization.Extensions
+namespace NJection.Extensions
 {
     public static class CollectionExtensions
     {

@@ -8,8 +8,21 @@ using NJection.ExpressionSerialization.Ast.Configuration;
 
 namespace NJection.ExpressionSerialization.Ast.Configuration
 {
-    public abstract partial class ExpressionConfiguration
+    public abstract partial class ExpressionConfiguration : Expression
     {
         internal abstract Expression Accept(IScope scope, IExpressionConfigurationVisitor visitor);
+
+        public override bool CanReduce {
+            get {
+                return false;
+            }
+        }
+
+        public override ExpressionType NodeType {
+            get {
+                return ExpressionType.Extension;
+            }
+        }
+        
     }
 }

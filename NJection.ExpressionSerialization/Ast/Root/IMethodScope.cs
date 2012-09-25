@@ -1,6 +1,4 @@
-﻿using NJection.ExpressionSerialization.Expressions;
-
-namespace NJection.ExpressionSerialization
+﻿namespace NJection.ExpressionSerialization.Ast
 {
     public interface IMethodScope : IBranchingRegistry
     {

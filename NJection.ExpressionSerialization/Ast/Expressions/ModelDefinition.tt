@@ -20,7 +20,7 @@ namespace NJection.ExpressionSerialization.Ast.Expressions
 	{	
 		private <#= item.name #>Configuration _configuration = null;
 
-		internal <#= className #>(<#= item.name #>Configuration configuration, IScope scope, IConfigurationVisitor visitor) 
+		internal <#= className #>(<#= item.name #>Configuration configuration, IScope scope, IExpressionConfigurationVisitor visitor) 
 			: base(scope, visitor) {
 
 			_configuration = configuration;

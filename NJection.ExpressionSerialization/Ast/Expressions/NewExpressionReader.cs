@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using NJection.ExpressionSerialization.Extensions;
+using NJection.Extensions;
 using NJection.ExpressionSerialization.Ast.Configuration;
 using System.Reflection;
 

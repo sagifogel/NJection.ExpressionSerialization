@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using NJection.ExpressionSerialization.Ast.Configuration;
 using System.Linq.Expressions;
-using NJection.ExpressionSerialization.Extensions;
+using NJection.Extensions;
 
 namespace NJection.ExpressionSerialization.Ast.Expressions
 {
