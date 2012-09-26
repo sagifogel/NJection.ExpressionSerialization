@@ -1,4 +1,4 @@
-﻿namespace NJection.ExpressionSerialization.Ast
+﻿namespace NJection.Core
 {
     public interface IMethodScope : IBranchingRegistry
     {

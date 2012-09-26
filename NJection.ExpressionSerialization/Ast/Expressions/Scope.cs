@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using NJection.Core;
 using NJection.ExpressionSerialization.Ast.Visitors;
+using NJection.Scope;
 
 namespace NJection.ExpressionSerialization.Ast.Expressions
 {

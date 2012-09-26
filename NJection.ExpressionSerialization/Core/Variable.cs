@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace NJection.ExpressionSerialization
+namespace NJection.Core
 {
     public class Variable
     {

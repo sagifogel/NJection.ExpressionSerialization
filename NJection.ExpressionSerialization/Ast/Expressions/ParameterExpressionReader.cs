@@ -12,7 +12,6 @@ namespace NJection.ExpressionSerialization.Ast.Expressions
         private ParameterExpression _parameter = null;
 
         partial void ReadConfiguration(ParameterExpressionConfiguration configuration) {
-
             if (!string.IsNullOrEmpty(configuration.@ref)) {
                 _parameter = Scope.Find(configuration.@ref);
             }
@@ -25,7 +24,7 @@ namespace NJection.ExpressionSerialization.Ast.Expressions
 
         public string Name { get; set; }
 
-        public override System.Linq.Expressions.Expression Reduce() {
+        public override Expression Reduce() {
             return _parameter;
         }
     }

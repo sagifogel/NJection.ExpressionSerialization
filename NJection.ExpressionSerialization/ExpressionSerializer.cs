@@ -1,4 +1,5 @@
 ﻿using System.Linq.Expressions;
+using NJection.Core;
 using NJection.ExpressionSerialization.Ast.Configuration;
 using NJection.ExpressionSerialization.Ast.Expressions;
 using NJection.ExpressionSerialization.Ast.Visitors;

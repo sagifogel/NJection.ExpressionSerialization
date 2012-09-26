@@ -1,20 +1,14 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Linq.Expressions;
+using System.Threading;
 
-namespace NJection.ExpressionSerialization.Ast
+namespace NJection.Core
 {
     internal class BranchingRegistry : IBranchingRegistry
     {
-        private static readonly object _syncLock = new object();
         private static readonly string _returnStatementName = "ReturnStatement";
-        private ConcurrentDictionary<string, LabelTarget> _branchingDictionary = null;
-
-        public BranchingRegistry() {
-            lock (_syncLock) {
-                _branchingDictionary = new ConcurrentDictionary<string, LabelTarget>();
-            }
-        }
+        private ConcurrentDictionary<string, LabelTarget> _branchingDictionary = new ConcurrentDictionary<string, LabelTarget>();
 
         public bool HasReturnLabel { get; private set; }
 

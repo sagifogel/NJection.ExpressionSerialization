@@ -5,6 +5,8 @@ using System.Text;
 using NJection.ExpressionSerialization.Ast.Configuration;
 using System.Linq.Expressions;
 using NJection.Extensions;
+using NJection.Scope;
+using NJection.Core;
 
 namespace NJection.ExpressionSerialization.Ast.Expressions
 {

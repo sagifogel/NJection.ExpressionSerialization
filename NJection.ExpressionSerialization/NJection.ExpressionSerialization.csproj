@@ -67,14 +67,14 @@
     </Compile>
     <Compile Include="Ast\Expressions\NewExpressionReader.cs" />
     <Compile Include="Ast\Expressions\ParameterExpressionReader.cs" />
-    <Compile Include="Ast\Root\BranchingRegistry.cs" />
-    <Compile Include="Ast\Root\IBranchingRegistry.cs" />
-    <Compile Include="Ast\Root\IMethodScope.cs" />
+    <Compile Include="Core\BranchingRegistry.cs" />
+    <Compile Include="Core\IBranchingRegistry.cs" />
+    <Compile Include="Core\IMethodScope.cs" />
     <Compile Include="Ast\Scope\IContext.cs" />
     <Compile Include="Ast\Scope\IScope.cs" />
     <Compile Include="Ast\Scope\IScopeChild.cs" />
-    <Compile Include="Ast\Scope\Scope.cs" />
-    <Compile Include="Ast\Scope\Variable.cs" />
+    <Compile Include="Ast\Expressions\Scope.cs" />
+    <Compile Include="Core\Variable.cs" />
     <Compile Include="Ast\Visitors\ExpressionConfigurationVisitor.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -87,7 +87,7 @@
     </Compile>
     <Compile Include="Ast\Visitors\IExpressionConfigurationVisitor.ext.cs" />
     <Compile Include="Ast\Visitors\SerializerVisitor.cs" />
-    <Compile Include="DelegateConstraintAttribute.cs" />
+    <Compile Include="Core\DelegateConstraintAttribute.cs" />
     <Compile Include="Ast\Configuration\ExpressionConfiguration.cs" />
     <Compile Include="Extensions\CollectionExtensions.cs">
       <SubType>Code</SubType>

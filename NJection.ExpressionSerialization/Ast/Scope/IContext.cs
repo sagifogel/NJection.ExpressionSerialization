@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
 
-namespace NJection.ExpressionSerialization.Ast
+namespace NJection
 {
     public interface IContext
     {

@@ -2,6 +2,7 @@ using System;
 using System.Linq.Expressions;
 using NJection.ExpressionSerialization.Ast.Configuration;
 using NJection.ExpressionSerialization.Ast.Visitors;
+using NJection.Scope;
 
 namespace NJection.ExpressionSerialization.Ast.Configuration
 {	
