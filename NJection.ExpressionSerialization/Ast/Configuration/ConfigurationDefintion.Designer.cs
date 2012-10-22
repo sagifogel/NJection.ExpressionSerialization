@@ -4,7 +4,8 @@
 //    <NameSpace>NJection.ExpressionSerialization.Ast.Configuration</NameSpace><Collection>List</Collection><codeType>CSharp</codeType><EnableDataBinding>False</EnableDataBinding><EnableLazyLoading>False</EnableLazyLoading><TrackingChangesEnable>False</TrackingChangesEnable><GenTrackingClasses>False</GenTrackingClasses><HidePrivateFieldInIDE>False</HidePrivateFieldInIDE><EnableSummaryComment>False</EnableSummaryComment><VirtualProp>False</VirtualProp><IncludeSerializeMethod>True</IncludeSerializeMethod><UseBaseClass>False</UseBaseClass><GenBaseClass>False</GenBaseClass><GenerateCloneMethod>False</GenerateCloneMethod><GenerateDataContracts>False</GenerateDataContracts><CodeBaseTag>Net40</CodeBaseTag><SerializeMethodName>Serialize</SerializeMethodName><DeserializeMethodName>Deserialize</DeserializeMethodName><SaveToFileMethodName>SaveToFile</SaveToFileMethodName><LoadFromFileMethodName>LoadFromFile</LoadFromFileMethodName><GenerateXMLAttributes>True</GenerateXMLAttributes><EnableEncoding>False</EnableEncoding><AutomaticProperties>False</AutomaticProperties><GenerateShouldSerialize>False</GenerateShouldSerialize><DisableDebug>False</DisableDebug><PropNameSpecified>Default</PropNameSpecified><Encoder>UTF8</Encoder><CustomUsings></CustomUsings><ExcludeIncludedTypes>False</ExcludeIncludedTypes><EnableInitializeFields>True</EnableInitializeFields>
 //  </auto-generated>
 // ------------------------------------------------------------------------------
-namespace NJection.ExpressionSerialization.Ast.Configuration {
+namespace NJection.ExpressionSerialization.Ast.Configuration
+{
     using System;
     using System.Diagnostics;
     using System.Xml.Serialization;
@@ -14,67 +15,80 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
     using System.IO;
     using System.Text;
     using System.Collections.Generic;
-    
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="urn:njection-configuration")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="urn:njection-configuration", IsNullable=false)]
-    public partial class models {
-        
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:njection-configuration")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:njection-configuration", IsNullable = false)]
+    public partial class models
+    {
+
         private List<expression> expressionField;
-        
+
         private static System.Xml.Serialization.XmlSerializer serializer;
-        
-        public models() {
+
+        public models()
+        {
             this.expressionField = new List<expression>();
         }
-        
-        [System.Xml.Serialization.XmlElementAttribute("expression", Order=0)]
-        public List<expression> expression {
-            get {
+
+        [System.Xml.Serialization.XmlElementAttribute("expression", Order = 0)]
+        public List<expression> expression
+        {
+            get
+            {
                 return this.expressionField;
             }
-            set {
+            set
+            {
                 this.expressionField = value;
             }
         }
-        
-        private static System.Xml.Serialization.XmlSerializer Serializer {
-            get {
-                if ((serializer == null)) {
+
+        private static System.Xml.Serialization.XmlSerializer Serializer
+        {
+            get
+            {
+                if ((serializer == null))
+                {
                     serializer = new System.Xml.Serialization.XmlSerializer(typeof(models));
                 }
                 return serializer;
             }
         }
-        
+
         #region Serialize/Deserialize
         /// <summary>
         /// Serializes current models object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
-        public virtual string Serialize() {
+        public virtual string Serialize()
+        {
             System.IO.StreamReader streamReader = null;
             System.IO.MemoryStream memoryStream = null;
-            try {
+            try
+            {
                 memoryStream = new System.IO.MemoryStream();
                 Serializer.Serialize(memoryStream, this);
                 memoryStream.Seek(0, System.IO.SeekOrigin.Begin);
                 streamReader = new System.IO.StreamReader(memoryStream);
                 return streamReader.ReadToEnd();
             }
-            finally {
-                if ((streamReader != null)) {
+            finally
+            {
+                if ((streamReader != null))
+                {
                     streamReader.Dispose();
                 }
-                if ((memoryStream != null)) {
+                if ((memoryStream != null))
+                {
                     memoryStream.Dispose();
                 }
             }
         }
-        
+
         /// <summary>
         /// Deserializes workflow markup into an models object
         /// </summary>
@@ -82,71 +96,86 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
         /// <param name="obj">Output models object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool Deserialize(string xml, out models obj, out System.Exception exception) {
+        public static bool Deserialize(string xml, out models obj, out System.Exception exception)
+        {
             exception = null;
             obj = default(models);
-            try {
+            try
+            {
                 obj = Deserialize(xml);
                 return true;
             }
-            catch (System.Exception ex) {
+            catch (System.Exception ex)
+            {
                 exception = ex;
                 return false;
             }
         }
-        
-        public static bool Deserialize(string xml, out models obj) {
+
+        public static bool Deserialize(string xml, out models obj)
+        {
             System.Exception exception = null;
             return Deserialize(xml, out obj, out exception);
         }
-        
-        public static models Deserialize(string xml) {
+
+        public static models Deserialize(string xml)
+        {
             System.IO.StringReader stringReader = null;
-            try {
+            try
+            {
                 stringReader = new System.IO.StringReader(xml);
                 return ((models)(Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader))));
             }
-            finally {
-                if ((stringReader != null)) {
+            finally
+            {
+                if ((stringReader != null))
+                {
                     stringReader.Dispose();
                 }
             }
         }
-        
+
         /// <summary>
         /// Serializes current models object into file
         /// </summary>
         /// <param name="fileName">full path of outupt xml file</param>
         /// <param name="exception">output Exception value if failed</param>
         /// <returns>true if can serialize and save into file; otherwise, false</returns>
-        public virtual bool SaveToFile(string fileName, out System.Exception exception) {
+        public virtual bool SaveToFile(string fileName, out System.Exception exception)
+        {
             exception = null;
-            try {
+            try
+            {
                 SaveToFile(fileName);
                 return true;
             }
-            catch (System.Exception e) {
+            catch (System.Exception e)
+            {
                 exception = e;
                 return false;
             }
         }
-        
-        public virtual void SaveToFile(string fileName) {
+
+        public virtual void SaveToFile(string fileName)
+        {
             System.IO.StreamWriter streamWriter = null;
-            try {
+            try
+            {
                 string xmlString = Serialize();
                 System.IO.FileInfo xmlFile = new System.IO.FileInfo(fileName);
                 streamWriter = xmlFile.CreateText();
                 streamWriter.WriteLine(xmlString);
                 streamWriter.Close();
             }
-            finally {
-                if ((streamWriter != null)) {
+            finally
+            {
+                if ((streamWriter != null))
+                {
                     streamWriter.Dispose();
                 }
             }
         }
-        
+
         /// <summary>
         /// Deserializes xml markup from file into an models object
         /// </summary>
@@ -154,28 +183,34 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
         /// <param name="obj">Output models object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool LoadFromFile(string fileName, out models obj, out System.Exception exception) {
+        public static bool LoadFromFile(string fileName, out models obj, out System.Exception exception)
+        {
             exception = null;
             obj = default(models);
-            try {
+            try
+            {
                 obj = LoadFromFile(fileName);
                 return true;
             }
-            catch (System.Exception ex) {
+            catch (System.Exception ex)
+            {
                 exception = ex;
                 return false;
             }
         }
-        
-        public static bool LoadFromFile(string fileName, out models obj) {
+
+        public static bool LoadFromFile(string fileName, out models obj)
+        {
             System.Exception exception = null;
             return LoadFromFile(fileName, out obj, out exception);
         }
-        
-        public static models LoadFromFile(string fileName) {
+
+        public static models LoadFromFile(string fileName)
+        {
             System.IO.FileStream file = null;
             System.IO.StreamReader sr = null;
-            try {
+            try
+            {
                 file = new System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read);
                 sr = new System.IO.StreamReader(file);
                 string xmlString = sr.ReadToEnd();
@@ -183,113 +218,138 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 file.Close();
                 return Deserialize(xmlString);
             }
-            finally {
-                if ((file != null)) {
+            finally
+            {
+                if ((file != null))
+                {
                     file.Dispose();
                 }
-                if ((sr != null)) {
+                if ((sr != null))
+                {
                     sr.Dispose();
                 }
             }
         }
         #endregion
     }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:njection-configuration")]
-    public partial class expression {
-        
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:njection-configuration")]
+    public partial class expression
+    {
+
         private ConfigurationNodeType nodeTypeField;
-        
+
         private bool nodeTypeFieldSpecified;
-        
+
         private string nameField;
-        
+
         private bool isScopeField;
-        
+
         private static System.Xml.Serialization.XmlSerializer serializer;
-        
-        public expression() {
+
+        public expression()
+        {
             this.isScopeField = false;
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public ConfigurationNodeType nodeType {
-            get {
+        public ConfigurationNodeType nodeType
+        {
+            get
+            {
                 return this.nodeTypeField;
             }
-            set {
+            set
+            {
                 this.nodeTypeField = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool nodeTypeSpecified {
-            get {
+        public bool nodeTypeSpecified
+        {
+            get
+            {
                 return this.nodeTypeFieldSpecified;
             }
-            set {
+            set
+            {
                 this.nodeTypeFieldSpecified = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string name {
-            get {
+        public string name
+        {
+            get
+            {
                 return this.nameField;
             }
-            set {
+            set
+            {
                 this.nameField = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(false)]
-        public bool isScope {
-            get {
+        public bool isScope
+        {
+            get
+            {
                 return this.isScopeField;
             }
-            set {
+            set
+            {
                 this.isScopeField = value;
             }
         }
-        
-        private static System.Xml.Serialization.XmlSerializer Serializer {
-            get {
-                if ((serializer == null)) {
+
+        private static System.Xml.Serialization.XmlSerializer Serializer
+        {
+            get
+            {
+                if ((serializer == null))
+                {
                     serializer = new System.Xml.Serialization.XmlSerializer(typeof(expression));
                 }
                 return serializer;
             }
         }
-        
+
         #region Serialize/Deserialize
         /// <summary>
         /// Serializes current expression object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
-        public virtual string Serialize() {
+        public virtual string Serialize()
+        {
             System.IO.StreamReader streamReader = null;
             System.IO.MemoryStream memoryStream = null;
-            try {
+            try
+            {
                 memoryStream = new System.IO.MemoryStream();
                 Serializer.Serialize(memoryStream, this);
                 memoryStream.Seek(0, System.IO.SeekOrigin.Begin);
                 streamReader = new System.IO.StreamReader(memoryStream);
                 return streamReader.ReadToEnd();
             }
-            finally {
-                if ((streamReader != null)) {
+            finally
+            {
+                if ((streamReader != null))
+                {
                     streamReader.Dispose();
                 }
-                if ((memoryStream != null)) {
+                if ((memoryStream != null))
+                {
                     memoryStream.Dispose();
                 }
             }
         }
-        
+
         /// <summary>
         /// Deserializes workflow markup into an expression object
         /// </summary>
@@ -297,71 +357,86 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
         /// <param name="obj">Output expression object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool Deserialize(string xml, out expression obj, out System.Exception exception) {
+        public static bool Deserialize(string xml, out expression obj, out System.Exception exception)
+        {
             exception = null;
             obj = default(expression);
-            try {
+            try
+            {
                 obj = Deserialize(xml);
                 return true;
             }
-            catch (System.Exception ex) {
+            catch (System.Exception ex)
+            {
                 exception = ex;
                 return false;
             }
         }
-        
-        public static bool Deserialize(string xml, out expression obj) {
+
+        public static bool Deserialize(string xml, out expression obj)
+        {
             System.Exception exception = null;
             return Deserialize(xml, out obj, out exception);
         }
-        
-        public static expression Deserialize(string xml) {
+
+        public static expression Deserialize(string xml)
+        {
             System.IO.StringReader stringReader = null;
-            try {
+            try
+            {
                 stringReader = new System.IO.StringReader(xml);
                 return ((expression)(Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader))));
             }
-            finally {
-                if ((stringReader != null)) {
+            finally
+            {
+                if ((stringReader != null))
+                {
                     stringReader.Dispose();
                 }
             }
         }
-        
+
         /// <summary>
         /// Serializes current expression object into file
         /// </summary>
         /// <param name="fileName">full path of outupt xml file</param>
         /// <param name="exception">output Exception value if failed</param>
         /// <returns>true if can serialize and save into file; otherwise, false</returns>
-        public virtual bool SaveToFile(string fileName, out System.Exception exception) {
+        public virtual bool SaveToFile(string fileName, out System.Exception exception)
+        {
             exception = null;
-            try {
+            try
+            {
                 SaveToFile(fileName);
                 return true;
             }
-            catch (System.Exception e) {
+            catch (System.Exception e)
+            {
                 exception = e;
                 return false;
             }
         }
-        
-        public virtual void SaveToFile(string fileName) {
+
+        public virtual void SaveToFile(string fileName)
+        {
             System.IO.StreamWriter streamWriter = null;
-            try {
+            try
+            {
                 string xmlString = Serialize();
                 System.IO.FileInfo xmlFile = new System.IO.FileInfo(fileName);
                 streamWriter = xmlFile.CreateText();
                 streamWriter.WriteLine(xmlString);
                 streamWriter.Close();
             }
-            finally {
-                if ((streamWriter != null)) {
+            finally
+            {
+                if ((streamWriter != null))
+                {
                     streamWriter.Dispose();
                 }
             }
         }
-        
+
         /// <summary>
         /// Deserializes xml markup from file into an expression object
         /// </summary>
@@ -369,28 +444,34 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
         /// <param name="obj">Output expression object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool LoadFromFile(string fileName, out expression obj, out System.Exception exception) {
+        public static bool LoadFromFile(string fileName, out expression obj, out System.Exception exception)
+        {
             exception = null;
             obj = default(expression);
-            try {
+            try
+            {
                 obj = LoadFromFile(fileName);
                 return true;
             }
-            catch (System.Exception ex) {
+            catch (System.Exception ex)
+            {
                 exception = ex;
                 return false;
             }
         }
-        
-        public static bool LoadFromFile(string fileName, out expression obj) {
+
+        public static bool LoadFromFile(string fileName, out expression obj)
+        {
             System.Exception exception = null;
             return LoadFromFile(fileName, out obj, out exception);
         }
-        
-        public static expression LoadFromFile(string fileName) {
+
+        public static expression LoadFromFile(string fileName)
+        {
             System.IO.FileStream file = null;
             System.IO.StreamReader sr = null;
-            try {
+            try
+            {
                 file = new System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read);
                 sr = new System.IO.StreamReader(file);
                 string xmlString = sr.ReadToEnd();
@@ -398,98 +479,118 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 file.Close();
                 return Deserialize(xmlString);
             }
-            finally {
-                if ((file != null)) {
+            finally
+            {
+                if ((file != null))
+                {
                     file.Dispose();
                 }
-                if ((sr != null)) {
+                if ((sr != null))
+                {
                     sr.Dispose();
                 }
             }
         }
         #endregion
     }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:njection-configuration")]
-    public enum ConfigurationNodeType {
-        
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:njection-configuration")]
+    public enum ConfigurationNodeType
+    {
+
         /// <remarks/>
         Constant,
-        
+
         /// <remarks/>
         Parameter,
-        
+
         /// <remarks/>
         New,
-        
+
         /// <remarks/>
         Lambda,
-        
+
         /// <remarks/>
         Expression,
+
+        /// <remarks/>
+        Default,
     }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="urn:njection-configuration")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="urn:njection-configuration", IsNullable=false)]
-    public partial class njection_configuration {
-        
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:njection-configuration")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:njection-configuration", IsNullable = false)]
+    public partial class njection_configuration
+    {
+
         private LambdaExpressionConfiguration lambdaField;
-        
+
         private static System.Xml.Serialization.XmlSerializer serializer;
-        
-        public njection_configuration() {
+
+        public njection_configuration()
+        {
             this.lambdaField = new LambdaExpressionConfiguration();
         }
-        
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public LambdaExpressionConfiguration lambda {
-            get {
+
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public LambdaExpressionConfiguration lambda
+        {
+            get
+            {
                 return this.lambdaField;
             }
-            set {
+            set
+            {
                 this.lambdaField = value;
             }
         }
-        
-        private static System.Xml.Serialization.XmlSerializer Serializer {
-            get {
-                if ((serializer == null)) {
+
+        private static System.Xml.Serialization.XmlSerializer Serializer
+        {
+            get
+            {
+                if ((serializer == null))
+                {
                     serializer = new System.Xml.Serialization.XmlSerializer(typeof(njection_configuration));
                 }
                 return serializer;
             }
         }
-        
+
         #region Serialize/Deserialize
         /// <summary>
         /// Serializes current njection_configuration object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
-        public virtual string Serialize() {
+        public virtual string Serialize()
+        {
             System.IO.StreamReader streamReader = null;
             System.IO.MemoryStream memoryStream = null;
-            try {
+            try
+            {
                 memoryStream = new System.IO.MemoryStream();
                 Serializer.Serialize(memoryStream, this);
                 memoryStream.Seek(0, System.IO.SeekOrigin.Begin);
                 streamReader = new System.IO.StreamReader(memoryStream);
                 return streamReader.ReadToEnd();
             }
-            finally {
-                if ((streamReader != null)) {
+            finally
+            {
+                if ((streamReader != null))
+                {
                     streamReader.Dispose();
                 }
-                if ((memoryStream != null)) {
+                if ((memoryStream != null))
+                {
                     memoryStream.Dispose();
                 }
             }
         }
-        
+
         /// <summary>
         /// Deserializes workflow markup into an njection_configuration object
         /// </summary>
@@ -497,71 +598,86 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
         /// <param name="obj">Output njection_configuration object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool Deserialize(string xml, out njection_configuration obj, out System.Exception exception) {
+        public static bool Deserialize(string xml, out njection_configuration obj, out System.Exception exception)
+        {
             exception = null;
             obj = default(njection_configuration);
-            try {
+            try
+            {
                 obj = Deserialize(xml);
                 return true;
             }
-            catch (System.Exception ex) {
+            catch (System.Exception ex)
+            {
                 exception = ex;
                 return false;
             }
         }
-        
-        public static bool Deserialize(string xml, out njection_configuration obj) {
+
+        public static bool Deserialize(string xml, out njection_configuration obj)
+        {
             System.Exception exception = null;
             return Deserialize(xml, out obj, out exception);
         }
-        
-        public static njection_configuration Deserialize(string xml) {
+
+        public static njection_configuration Deserialize(string xml)
+        {
             System.IO.StringReader stringReader = null;
-            try {
+            try
+            {
                 stringReader = new System.IO.StringReader(xml);
                 return ((njection_configuration)(Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader))));
             }
-            finally {
-                if ((stringReader != null)) {
+            finally
+            {
+                if ((stringReader != null))
+                {
                     stringReader.Dispose();
                 }
             }
         }
-        
+
         /// <summary>
         /// Serializes current njection_configuration object into file
         /// </summary>
         /// <param name="fileName">full path of outupt xml file</param>
         /// <param name="exception">output Exception value if failed</param>
         /// <returns>true if can serialize and save into file; otherwise, false</returns>
-        public virtual bool SaveToFile(string fileName, out System.Exception exception) {
+        public virtual bool SaveToFile(string fileName, out System.Exception exception)
+        {
             exception = null;
-            try {
+            try
+            {
                 SaveToFile(fileName);
                 return true;
             }
-            catch (System.Exception e) {
+            catch (System.Exception e)
+            {
                 exception = e;
                 return false;
             }
         }
-        
-        public virtual void SaveToFile(string fileName) {
+
+        public virtual void SaveToFile(string fileName)
+        {
             System.IO.StreamWriter streamWriter = null;
-            try {
+            try
+            {
                 string xmlString = Serialize();
                 System.IO.FileInfo xmlFile = new System.IO.FileInfo(fileName);
                 streamWriter = xmlFile.CreateText();
                 streamWriter.WriteLine(xmlString);
                 streamWriter.Close();
             }
-            finally {
-                if ((streamWriter != null)) {
+            finally
+            {
+                if ((streamWriter != null))
+                {
                     streamWriter.Dispose();
                 }
             }
         }
-        
+
         /// <summary>
         /// Deserializes xml markup from file into an njection_configuration object
         /// </summary>
@@ -569,28 +685,34 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
         /// <param name="obj">Output njection_configuration object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool LoadFromFile(string fileName, out njection_configuration obj, out System.Exception exception) {
+        public static bool LoadFromFile(string fileName, out njection_configuration obj, out System.Exception exception)
+        {
             exception = null;
             obj = default(njection_configuration);
-            try {
+            try
+            {
                 obj = LoadFromFile(fileName);
                 return true;
             }
-            catch (System.Exception ex) {
+            catch (System.Exception ex)
+            {
                 exception = ex;
                 return false;
             }
         }
-        
-        public static bool LoadFromFile(string fileName, out njection_configuration obj) {
+
+        public static bool LoadFromFile(string fileName, out njection_configuration obj)
+        {
             System.Exception exception = null;
             return LoadFromFile(fileName, out obj, out exception);
         }
-        
-        public static njection_configuration LoadFromFile(string fileName) {
+
+        public static njection_configuration LoadFromFile(string fileName)
+        {
             System.IO.FileStream file = null;
             System.IO.StreamReader sr = null;
-            try {
+            try
+            {
                 file = new System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read);
                 sr = new System.IO.StreamReader(file);
                 string xmlString = sr.ReadToEnd();
@@ -598,126 +720,154 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 file.Close();
                 return Deserialize(xmlString);
             }
-            finally {
-                if ((file != null)) {
+            finally
+            {
+                if ((file != null))
+                {
                     file.Dispose();
                 }
-                if ((sr != null)) {
+                if ((sr != null))
+                {
                     sr.Dispose();
                 }
             }
         }
         #endregion
     }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:njection-configuration")]
-    public partial class LambdaExpressionConfiguration : ExpressionConfiguration {
-        
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:njection-configuration")]
+    public partial class LambdaExpressionConfiguration : ExpressionConfiguration
+    {
+
         private ExpressionConfiguration expressionField;
-        
+
         private List<ParameterExpressionConfiguration> argumentsField;
-        
+
         private ConfigurationNodeType nodeTypeField;
-        
+
         private bool nodeTypeFieldSpecified;
-        
+
         private string nameField;
-        
+
         private static System.Xml.Serialization.XmlSerializer serializer;
-        
-        public LambdaExpressionConfiguration() {
+
+        public LambdaExpressionConfiguration()
+        {
             this.argumentsField = new List<ParameterExpressionConfiguration>();
             this.nodeTypeField = ConfigurationNodeType.Lambda;
         }
-        
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public ExpressionConfiguration expression {
-            get {
+
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public ExpressionConfiguration expression
+        {
+            get
+            {
                 return this.expressionField;
             }
-            set {
+            set
+            {
                 this.expressionField = value;
             }
         }
-        
-        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("parameter", IsNullable=false)]
-        public List<ParameterExpressionConfiguration> arguments {
-            get {
+
+        [System.Xml.Serialization.XmlArrayAttribute(Order = 1)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("parameter", IsNullable = false)]
+        public List<ParameterExpressionConfiguration> arguments
+        {
+            get
+            {
                 return this.argumentsField;
             }
-            set {
+            set
+            {
                 this.argumentsField = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public ConfigurationNodeType nodeType {
-            get {
+        public ConfigurationNodeType nodeType
+        {
+            get
+            {
                 return this.nodeTypeField;
             }
-            set {
+            set
+            {
                 this.nodeTypeField = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool nodeTypeSpecified {
-            get {
+        public bool nodeTypeSpecified
+        {
+            get
+            {
                 return this.nodeTypeFieldSpecified;
             }
-            set {
+            set
+            {
                 this.nodeTypeFieldSpecified = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string name {
-            get {
+        public string name
+        {
+            get
+            {
                 return this.nameField;
             }
-            set {
+            set
+            {
                 this.nameField = value;
             }
         }
-        
-        private static System.Xml.Serialization.XmlSerializer Serializer {
-            get {
-                if ((serializer == null)) {
+
+        private static System.Xml.Serialization.XmlSerializer Serializer
+        {
+            get
+            {
+                if ((serializer == null))
+                {
                     serializer = new System.Xml.Serialization.XmlSerializer(typeof(LambdaExpressionConfiguration));
                 }
                 return serializer;
             }
         }
-        
+
         #region Serialize/Deserialize
         /// <summary>
         /// Serializes current LambdaExpressionConfiguration object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
-        public virtual string Serialize() {
+        public virtual string Serialize()
+        {
             System.IO.StreamReader streamReader = null;
             System.IO.MemoryStream memoryStream = null;
-            try {
+            try
+            {
                 memoryStream = new System.IO.MemoryStream();
                 Serializer.Serialize(memoryStream, this);
                 memoryStream.Seek(0, System.IO.SeekOrigin.Begin);
                 streamReader = new System.IO.StreamReader(memoryStream);
                 return streamReader.ReadToEnd();
             }
-            finally {
-                if ((streamReader != null)) {
+            finally
+            {
+                if ((streamReader != null))
+                {
                     streamReader.Dispose();
                 }
-                if ((memoryStream != null)) {
+                if ((memoryStream != null))
+                {
                     memoryStream.Dispose();
                 }
             }
         }
-        
+
         /// <summary>
         /// Deserializes workflow markup into an LambdaExpressionConfiguration object
         /// </summary>
@@ -725,71 +875,86 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
         /// <param name="obj">Output LambdaExpressionConfiguration object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool Deserialize(string xml, out LambdaExpressionConfiguration obj, out System.Exception exception) {
+        public static bool Deserialize(string xml, out LambdaExpressionConfiguration obj, out System.Exception exception)
+        {
             exception = null;
             obj = default(LambdaExpressionConfiguration);
-            try {
+            try
+            {
                 obj = Deserialize(xml);
                 return true;
             }
-            catch (System.Exception ex) {
+            catch (System.Exception ex)
+            {
                 exception = ex;
                 return false;
             }
         }
-        
-        public static bool Deserialize(string xml, out LambdaExpressionConfiguration obj) {
+
+        public static bool Deserialize(string xml, out LambdaExpressionConfiguration obj)
+        {
             System.Exception exception = null;
             return Deserialize(xml, out obj, out exception);
         }
-        
-        public static LambdaExpressionConfiguration Deserialize(string xml) {
+
+        public static LambdaExpressionConfiguration Deserialize(string xml)
+        {
             System.IO.StringReader stringReader = null;
-            try {
+            try
+            {
                 stringReader = new System.IO.StringReader(xml);
                 return ((LambdaExpressionConfiguration)(Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader))));
             }
-            finally {
-                if ((stringReader != null)) {
+            finally
+            {
+                if ((stringReader != null))
+                {
                     stringReader.Dispose();
                 }
             }
         }
-        
+
         /// <summary>
         /// Serializes current LambdaExpressionConfiguration object into file
         /// </summary>
         /// <param name="fileName">full path of outupt xml file</param>
         /// <param name="exception">output Exception value if failed</param>
         /// <returns>true if can serialize and save into file; otherwise, false</returns>
-        public virtual bool SaveToFile(string fileName, out System.Exception exception) {
+        public virtual bool SaveToFile(string fileName, out System.Exception exception)
+        {
             exception = null;
-            try {
+            try
+            {
                 SaveToFile(fileName);
                 return true;
             }
-            catch (System.Exception e) {
+            catch (System.Exception e)
+            {
                 exception = e;
                 return false;
             }
         }
-        
-        public virtual void SaveToFile(string fileName) {
+
+        public virtual void SaveToFile(string fileName)
+        {
             System.IO.StreamWriter streamWriter = null;
-            try {
+            try
+            {
                 string xmlString = Serialize();
                 System.IO.FileInfo xmlFile = new System.IO.FileInfo(fileName);
                 streamWriter = xmlFile.CreateText();
                 streamWriter.WriteLine(xmlString);
                 streamWriter.Close();
             }
-            finally {
-                if ((streamWriter != null)) {
+            finally
+            {
+                if ((streamWriter != null))
+                {
                     streamWriter.Dispose();
                 }
             }
         }
-        
+
         /// <summary>
         /// Deserializes xml markup from file into an LambdaExpressionConfiguration object
         /// </summary>
@@ -797,28 +962,34 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
         /// <param name="obj">Output LambdaExpressionConfiguration object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool LoadFromFile(string fileName, out LambdaExpressionConfiguration obj, out System.Exception exception) {
+        public static bool LoadFromFile(string fileName, out LambdaExpressionConfiguration obj, out System.Exception exception)
+        {
             exception = null;
             obj = default(LambdaExpressionConfiguration);
-            try {
+            try
+            {
                 obj = LoadFromFile(fileName);
                 return true;
             }
-            catch (System.Exception ex) {
+            catch (System.Exception ex)
+            {
                 exception = ex;
                 return false;
             }
         }
-        
-        public static bool LoadFromFile(string fileName, out LambdaExpressionConfiguration obj) {
+
+        public static bool LoadFromFile(string fileName, out LambdaExpressionConfiguration obj)
+        {
             System.Exception exception = null;
             return LoadFromFile(fileName, out obj, out exception);
         }
-        
-        public static LambdaExpressionConfiguration LoadFromFile(string fileName) {
+
+        public static LambdaExpressionConfiguration LoadFromFile(string fileName)
+        {
             System.IO.FileStream file = null;
             System.IO.StreamReader sr = null;
-            try {
+            try
+            {
                 file = new System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read);
                 sr = new System.IO.StreamReader(file);
                 string xmlString = sr.ReadToEnd();
@@ -826,76 +997,92 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 file.Close();
                 return Deserialize(xmlString);
             }
-            finally {
-                if ((file != null)) {
+            finally
+            {
+                if ((file != null))
+                {
                     file.Dispose();
                 }
-                if ((sr != null)) {
+                if ((sr != null))
+                {
                     sr.Dispose();
                 }
             }
         }
         #endregion
     }
-    
+
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DefaultExpressionConfiguration))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(NewExpressionConfiguration))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ConstantExpressionConfiguration))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ParameterExpressionConfiguration))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(LambdaExpressionConfiguration))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:njection-configuration")]
-    public abstract partial class ExpressionConfiguration {
-        
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:njection-configuration")]
+    public abstract partial class ExpressionConfiguration
+    {
+
         private string typeField;
-        
+
         private static System.Xml.Serialization.XmlSerializer serializer;
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string type {
-            get {
+        public string type
+        {
+            get
+            {
                 return this.typeField;
             }
-            set {
+            set
+            {
                 this.typeField = value;
             }
         }
-        
-        private static System.Xml.Serialization.XmlSerializer Serializer {
-            get {
-                if ((serializer == null)) {
+
+        private static System.Xml.Serialization.XmlSerializer Serializer
+        {
+            get
+            {
+                if ((serializer == null))
+                {
                     serializer = new System.Xml.Serialization.XmlSerializer(typeof(ExpressionConfiguration));
                 }
                 return serializer;
             }
         }
-        
+
         #region Serialize/Deserialize
         /// <summary>
         /// Serializes current ExpressionConfiguration object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
-        public virtual string Serialize() {
+        public virtual string Serialize()
+        {
             System.IO.StreamReader streamReader = null;
             System.IO.MemoryStream memoryStream = null;
-            try {
+            try
+            {
                 memoryStream = new System.IO.MemoryStream();
                 Serializer.Serialize(memoryStream, this);
                 memoryStream.Seek(0, System.IO.SeekOrigin.Begin);
                 streamReader = new System.IO.StreamReader(memoryStream);
                 return streamReader.ReadToEnd();
             }
-            finally {
-                if ((streamReader != null)) {
+            finally
+            {
+                if ((streamReader != null))
+                {
                     streamReader.Dispose();
                 }
-                if ((memoryStream != null)) {
+                if ((memoryStream != null))
+                {
                     memoryStream.Dispose();
                 }
             }
         }
-        
+
         /// <summary>
         /// Deserializes workflow markup into an ExpressionConfiguration object
         /// </summary>
@@ -903,71 +1090,86 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
         /// <param name="obj">Output ExpressionConfiguration object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool Deserialize(string xml, out ExpressionConfiguration obj, out System.Exception exception) {
+        public static bool Deserialize(string xml, out ExpressionConfiguration obj, out System.Exception exception)
+        {
             exception = null;
             obj = default(ExpressionConfiguration);
-            try {
+            try
+            {
                 obj = Deserialize(xml);
                 return true;
             }
-            catch (System.Exception ex) {
+            catch (System.Exception ex)
+            {
                 exception = ex;
                 return false;
             }
         }
-        
-        public static bool Deserialize(string xml, out ExpressionConfiguration obj) {
+
+        public static bool Deserialize(string xml, out ExpressionConfiguration obj)
+        {
             System.Exception exception = null;
             return Deserialize(xml, out obj, out exception);
         }
-        
-        public static ExpressionConfiguration Deserialize(string xml) {
+
+        public static ExpressionConfiguration Deserialize(string xml)
+        {
             System.IO.StringReader stringReader = null;
-            try {
+            try
+            {
                 stringReader = new System.IO.StringReader(xml);
                 return ((ExpressionConfiguration)(Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader))));
             }
-            finally {
-                if ((stringReader != null)) {
+            finally
+            {
+                if ((stringReader != null))
+                {
                     stringReader.Dispose();
                 }
             }
         }
-        
+
         /// <summary>
         /// Serializes current ExpressionConfiguration object into file
         /// </summary>
         /// <param name="fileName">full path of outupt xml file</param>
         /// <param name="exception">output Exception value if failed</param>
         /// <returns>true if can serialize and save into file; otherwise, false</returns>
-        public virtual bool SaveToFile(string fileName, out System.Exception exception) {
+        public virtual bool SaveToFile(string fileName, out System.Exception exception)
+        {
             exception = null;
-            try {
+            try
+            {
                 SaveToFile(fileName);
                 return true;
             }
-            catch (System.Exception e) {
+            catch (System.Exception e)
+            {
                 exception = e;
                 return false;
             }
         }
-        
-        public virtual void SaveToFile(string fileName) {
+
+        public virtual void SaveToFile(string fileName)
+        {
             System.IO.StreamWriter streamWriter = null;
-            try {
+            try
+            {
                 string xmlString = Serialize();
                 System.IO.FileInfo xmlFile = new System.IO.FileInfo(fileName);
                 streamWriter = xmlFile.CreateText();
                 streamWriter.WriteLine(xmlString);
                 streamWriter.Close();
             }
-            finally {
-                if ((streamWriter != null)) {
+            finally
+            {
+                if ((streamWriter != null))
+                {
                     streamWriter.Dispose();
                 }
             }
         }
-        
+
         /// <summary>
         /// Deserializes xml markup from file into an ExpressionConfiguration object
         /// </summary>
@@ -975,28 +1177,34 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
         /// <param name="obj">Output ExpressionConfiguration object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool LoadFromFile(string fileName, out ExpressionConfiguration obj, out System.Exception exception) {
+        public static bool LoadFromFile(string fileName, out ExpressionConfiguration obj, out System.Exception exception)
+        {
             exception = null;
             obj = default(ExpressionConfiguration);
-            try {
+            try
+            {
                 obj = LoadFromFile(fileName);
                 return true;
             }
-            catch (System.Exception ex) {
+            catch (System.Exception ex)
+            {
                 exception = ex;
                 return false;
             }
         }
-        
-        public static bool LoadFromFile(string fileName, out ExpressionConfiguration obj) {
+
+        public static bool LoadFromFile(string fileName, out ExpressionConfiguration obj)
+        {
             System.Exception exception = null;
             return LoadFromFile(fileName, out obj, out exception);
         }
-        
-        public static ExpressionConfiguration LoadFromFile(string fileName) {
+
+        public static ExpressionConfiguration LoadFromFile(string fileName)
+        {
             System.IO.FileStream file = null;
             System.IO.StreamReader sr = null;
-            try {
+            try
+            {
                 file = new System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read);
                 sr = new System.IO.StreamReader(file);
                 string xmlString = sr.ReadToEnd();
@@ -1004,102 +1212,354 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 file.Close();
                 return Deserialize(xmlString);
             }
-            finally {
-                if ((file != null)) {
+            finally
+            {
+                if ((file != null))
+                {
                     file.Dispose();
                 }
-                if ((sr != null)) {
+                if ((sr != null))
+                {
                     sr.Dispose();
                 }
             }
         }
         #endregion
     }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:njection-configuration")]
-    public partial class NewExpressionConfiguration : ExpressionConfiguration {
-        
-        private List<ParameterExpressionConfiguration> argumentsField;
-        
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:njection-configuration")]
+    public partial class DefaultExpressionConfiguration : ExpressionConfiguration
+    {
+
         private ConfigurationNodeType nodeTypeField;
-        
+
         private bool nodeTypeFieldSpecified;
-        
+
         private static System.Xml.Serialization.XmlSerializer serializer;
-        
-        public NewExpressionConfiguration() {
-            this.argumentsField = new List<ParameterExpressionConfiguration>();
-            this.nodeTypeField = ConfigurationNodeType.New;
+
+        public DefaultExpressionConfiguration()
+        {
+            this.nodeTypeField = ConfigurationNodeType.Default;
         }
-        
-        [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("parameter", typeof(ParameterExpressionConfiguration), IsNullable=false)]
-        public List<ParameterExpressionConfiguration> arguments {
-            get {
-                return this.argumentsField;
-            }
-            set {
-                this.argumentsField = value;
-            }
-        }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public ConfigurationNodeType nodeType {
-            get {
+        public ConfigurationNodeType nodeType
+        {
+            get
+            {
                 return this.nodeTypeField;
             }
-            set {
+            set
+            {
                 this.nodeTypeField = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool nodeTypeSpecified {
-            get {
+        public bool nodeTypeSpecified
+        {
+            get
+            {
                 return this.nodeTypeFieldSpecified;
             }
-            set {
+            set
+            {
                 this.nodeTypeFieldSpecified = value;
             }
         }
-        
-        private static System.Xml.Serialization.XmlSerializer Serializer {
-            get {
-                if ((serializer == null)) {
-                    serializer = new System.Xml.Serialization.XmlSerializer(typeof(NewExpressionConfiguration));
+
+        private static System.Xml.Serialization.XmlSerializer Serializer
+        {
+            get
+            {
+                if ((serializer == null))
+                {
+                    serializer = new System.Xml.Serialization.XmlSerializer(typeof(DefaultExpressionConfiguration));
                 }
                 return serializer;
             }
         }
-        
+
         #region Serialize/Deserialize
         /// <summary>
-        /// Serializes current NewExpressionConfiguration object into an XML document
+        /// Serializes current DefaultExpressionConfiguration object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
-        public virtual string Serialize() {
+        public virtual string Serialize()
+        {
             System.IO.StreamReader streamReader = null;
             System.IO.MemoryStream memoryStream = null;
-            try {
+            try
+            {
                 memoryStream = new System.IO.MemoryStream();
                 Serializer.Serialize(memoryStream, this);
                 memoryStream.Seek(0, System.IO.SeekOrigin.Begin);
                 streamReader = new System.IO.StreamReader(memoryStream);
                 return streamReader.ReadToEnd();
             }
-            finally {
-                if ((streamReader != null)) {
+            finally
+            {
+                if ((streamReader != null))
+                {
                     streamReader.Dispose();
                 }
-                if ((memoryStream != null)) {
+                if ((memoryStream != null))
+                {
                     memoryStream.Dispose();
                 }
             }
         }
-        
+
+        /// <summary>
+        /// Deserializes workflow markup into an DefaultExpressionConfiguration object
+        /// </summary>
+        /// <param name="xml">string workflow markup to deserialize</param>
+        /// <param name="obj">Output DefaultExpressionConfiguration object</param>
+        /// <param name="exception">output Exception value if deserialize failed</param>
+        /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
+        public static bool Deserialize(string xml, out DefaultExpressionConfiguration obj, out System.Exception exception)
+        {
+            exception = null;
+            obj = default(DefaultExpressionConfiguration);
+            try
+            {
+                obj = Deserialize(xml);
+                return true;
+            }
+            catch (System.Exception ex)
+            {
+                exception = ex;
+                return false;
+            }
+        }
+
+        public static bool Deserialize(string xml, out DefaultExpressionConfiguration obj)
+        {
+            System.Exception exception = null;
+            return Deserialize(xml, out obj, out exception);
+        }
+
+        public static DefaultExpressionConfiguration Deserialize(string xml)
+        {
+            System.IO.StringReader stringReader = null;
+            try
+            {
+                stringReader = new System.IO.StringReader(xml);
+                return ((DefaultExpressionConfiguration)(Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader))));
+            }
+            finally
+            {
+                if ((stringReader != null))
+                {
+                    stringReader.Dispose();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Serializes current DefaultExpressionConfiguration object into file
+        /// </summary>
+        /// <param name="fileName">full path of outupt xml file</param>
+        /// <param name="exception">output Exception value if failed</param>
+        /// <returns>true if can serialize and save into file; otherwise, false</returns>
+        public virtual bool SaveToFile(string fileName, out System.Exception exception)
+        {
+            exception = null;
+            try
+            {
+                SaveToFile(fileName);
+                return true;
+            }
+            catch (System.Exception e)
+            {
+                exception = e;
+                return false;
+            }
+        }
+
+        public virtual void SaveToFile(string fileName)
+        {
+            System.IO.StreamWriter streamWriter = null;
+            try
+            {
+                string xmlString = Serialize();
+                System.IO.FileInfo xmlFile = new System.IO.FileInfo(fileName);
+                streamWriter = xmlFile.CreateText();
+                streamWriter.WriteLine(xmlString);
+                streamWriter.Close();
+            }
+            finally
+            {
+                if ((streamWriter != null))
+                {
+                    streamWriter.Dispose();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Deserializes xml markup from file into an DefaultExpressionConfiguration object
+        /// </summary>
+        /// <param name="fileName">string xml file to load and deserialize</param>
+        /// <param name="obj">Output DefaultExpressionConfiguration object</param>
+        /// <param name="exception">output Exception value if deserialize failed</param>
+        /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
+        public static bool LoadFromFile(string fileName, out DefaultExpressionConfiguration obj, out System.Exception exception)
+        {
+            exception = null;
+            obj = default(DefaultExpressionConfiguration);
+            try
+            {
+                obj = LoadFromFile(fileName);
+                return true;
+            }
+            catch (System.Exception ex)
+            {
+                exception = ex;
+                return false;
+            }
+        }
+
+        public static bool LoadFromFile(string fileName, out DefaultExpressionConfiguration obj)
+        {
+            System.Exception exception = null;
+            return LoadFromFile(fileName, out obj, out exception);
+        }
+
+        public static DefaultExpressionConfiguration LoadFromFile(string fileName)
+        {
+            System.IO.FileStream file = null;
+            System.IO.StreamReader sr = null;
+            try
+            {
+                file = new System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read);
+                sr = new System.IO.StreamReader(file);
+                string xmlString = sr.ReadToEnd();
+                sr.Close();
+                file.Close();
+                return Deserialize(xmlString);
+            }
+            finally
+            {
+                if ((file != null))
+                {
+                    file.Dispose();
+                }
+                if ((sr != null))
+                {
+                    sr.Dispose();
+                }
+            }
+        }
+        #endregion
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:njection-configuration")]
+    public partial class NewExpressionConfiguration : ExpressionConfiguration
+    {
+
+        private List<ParameterExpressionConfiguration> argumentsField;
+
+        private ConfigurationNodeType nodeTypeField;
+
+        private bool nodeTypeFieldSpecified;
+
+        private static System.Xml.Serialization.XmlSerializer serializer;
+
+        public NewExpressionConfiguration()
+        {
+            this.argumentsField = new List<ParameterExpressionConfiguration>();
+            this.nodeTypeField = ConfigurationNodeType.New;
+        }
+
+        [System.Xml.Serialization.XmlArrayAttribute(Order = 0)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("parameter", typeof(ParameterExpressionConfiguration), IsNullable = false)]
+        public List<ParameterExpressionConfiguration> arguments
+        {
+            get
+            {
+                return this.argumentsField;
+            }
+            set
+            {
+                this.argumentsField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public ConfigurationNodeType nodeType
+        {
+            get
+            {
+                return this.nodeTypeField;
+            }
+            set
+            {
+                this.nodeTypeField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool nodeTypeSpecified
+        {
+            get
+            {
+                return this.nodeTypeFieldSpecified;
+            }
+            set
+            {
+                this.nodeTypeFieldSpecified = value;
+            }
+        }
+
+        private static System.Xml.Serialization.XmlSerializer Serializer
+        {
+            get
+            {
+                if ((serializer == null))
+                {
+                    serializer = new System.Xml.Serialization.XmlSerializer(typeof(NewExpressionConfiguration));
+                }
+                return serializer;
+            }
+        }
+
+        #region Serialize/Deserialize
+        /// <summary>
+        /// Serializes current NewExpressionConfiguration object into an XML document
+        /// </summary>
+        /// <returns>string XML value</returns>
+        public virtual string Serialize()
+        {
+            System.IO.StreamReader streamReader = null;
+            System.IO.MemoryStream memoryStream = null;
+            try
+            {
+                memoryStream = new System.IO.MemoryStream();
+                Serializer.Serialize(memoryStream, this);
+                memoryStream.Seek(0, System.IO.SeekOrigin.Begin);
+                streamReader = new System.IO.StreamReader(memoryStream);
+                return streamReader.ReadToEnd();
+            }
+            finally
+            {
+                if ((streamReader != null))
+                {
+                    streamReader.Dispose();
+                }
+                if ((memoryStream != null))
+                {
+                    memoryStream.Dispose();
+                }
+            }
+        }
+
         /// <summary>
         /// Deserializes workflow markup into an NewExpressionConfiguration object
         /// </summary>
@@ -1107,71 +1567,86 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
         /// <param name="obj">Output NewExpressionConfiguration object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool Deserialize(string xml, out NewExpressionConfiguration obj, out System.Exception exception) {
+        public static bool Deserialize(string xml, out NewExpressionConfiguration obj, out System.Exception exception)
+        {
             exception = null;
             obj = default(NewExpressionConfiguration);
-            try {
+            try
+            {
                 obj = Deserialize(xml);
                 return true;
             }
-            catch (System.Exception ex) {
+            catch (System.Exception ex)
+            {
                 exception = ex;
                 return false;
             }
         }
-        
-        public static bool Deserialize(string xml, out NewExpressionConfiguration obj) {
+
+        public static bool Deserialize(string xml, out NewExpressionConfiguration obj)
+        {
             System.Exception exception = null;
             return Deserialize(xml, out obj, out exception);
         }
-        
-        public static NewExpressionConfiguration Deserialize(string xml) {
+
+        public static NewExpressionConfiguration Deserialize(string xml)
+        {
             System.IO.StringReader stringReader = null;
-            try {
+            try
+            {
                 stringReader = new System.IO.StringReader(xml);
                 return ((NewExpressionConfiguration)(Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader))));
             }
-            finally {
-                if ((stringReader != null)) {
+            finally
+            {
+                if ((stringReader != null))
+                {
                     stringReader.Dispose();
                 }
             }
         }
-        
+
         /// <summary>
         /// Serializes current NewExpressionConfiguration object into file
         /// </summary>
         /// <param name="fileName">full path of outupt xml file</param>
         /// <param name="exception">output Exception value if failed</param>
         /// <returns>true if can serialize and save into file; otherwise, false</returns>
-        public virtual bool SaveToFile(string fileName, out System.Exception exception) {
+        public virtual bool SaveToFile(string fileName, out System.Exception exception)
+        {
             exception = null;
-            try {
+            try
+            {
                 SaveToFile(fileName);
                 return true;
             }
-            catch (System.Exception e) {
+            catch (System.Exception e)
+            {
                 exception = e;
                 return false;
             }
         }
-        
-        public virtual void SaveToFile(string fileName) {
+
+        public virtual void SaveToFile(string fileName)
+        {
             System.IO.StreamWriter streamWriter = null;
-            try {
+            try
+            {
                 string xmlString = Serialize();
                 System.IO.FileInfo xmlFile = new System.IO.FileInfo(fileName);
                 streamWriter = xmlFile.CreateText();
                 streamWriter.WriteLine(xmlString);
                 streamWriter.Close();
             }
-            finally {
-                if ((streamWriter != null)) {
+            finally
+            {
+                if ((streamWriter != null))
+                {
                     streamWriter.Dispose();
                 }
             }
         }
-        
+
         /// <summary>
         /// Deserializes xml markup from file into an NewExpressionConfiguration object
         /// </summary>
@@ -1179,28 +1654,34 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
         /// <param name="obj">Output NewExpressionConfiguration object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool LoadFromFile(string fileName, out NewExpressionConfiguration obj, out System.Exception exception) {
+        public static bool LoadFromFile(string fileName, out NewExpressionConfiguration obj, out System.Exception exception)
+        {
             exception = null;
             obj = default(NewExpressionConfiguration);
-            try {
+            try
+            {
                 obj = LoadFromFile(fileName);
                 return true;
             }
-            catch (System.Exception ex) {
+            catch (System.Exception ex)
+            {
                 exception = ex;
                 return false;
             }
         }
-        
-        public static bool LoadFromFile(string fileName, out NewExpressionConfiguration obj) {
+
+        public static bool LoadFromFile(string fileName, out NewExpressionConfiguration obj)
+        {
             System.Exception exception = null;
             return LoadFromFile(fileName, out obj, out exception);
         }
-        
-        public static NewExpressionConfiguration LoadFromFile(string fileName) {
+
+        public static NewExpressionConfiguration LoadFromFile(string fileName)
+        {
             System.IO.FileStream file = null;
             System.IO.StreamReader sr = null;
-            try {
+            try
+            {
                 file = new System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read);
                 sr = new System.IO.StreamReader(file);
                 string xmlString = sr.ReadToEnd();
@@ -1208,112 +1689,137 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 file.Close();
                 return Deserialize(xmlString);
             }
-            finally {
-                if ((file != null)) {
+            finally
+            {
+                if ((file != null))
+                {
                     file.Dispose();
                 }
-                if ((sr != null)) {
+                if ((sr != null))
+                {
                     sr.Dispose();
                 }
             }
         }
         #endregion
     }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:njection-configuration")]
-    public partial class ParameterExpressionConfiguration : ExpressionConfiguration {
-        
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:njection-configuration")]
+    public partial class ParameterExpressionConfiguration : ExpressionConfiguration
+    {
+
         private ConfigurationNodeType nodeTypeField;
-        
+
         private bool nodeTypeFieldSpecified;
-        
+
         private string nameField;
-        
+
         private string refField;
-        
+
         private static System.Xml.Serialization.XmlSerializer serializer;
-        
-        public ParameterExpressionConfiguration() {
+
+        public ParameterExpressionConfiguration()
+        {
             this.nodeTypeField = ConfigurationNodeType.Parameter;
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public ConfigurationNodeType nodeType {
-            get {
+        public ConfigurationNodeType nodeType
+        {
+            get
+            {
                 return this.nodeTypeField;
             }
-            set {
+            set
+            {
                 this.nodeTypeField = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool nodeTypeSpecified {
-            get {
+        public bool nodeTypeSpecified
+        {
+            get
+            {
                 return this.nodeTypeFieldSpecified;
             }
-            set {
+            set
+            {
                 this.nodeTypeFieldSpecified = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string name {
-            get {
+        public string name
+        {
+            get
+            {
                 return this.nameField;
             }
-            set {
+            set
+            {
                 this.nameField = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string @ref {
-            get {
+        public string @ref
+        {
+            get
+            {
                 return this.refField;
             }
-            set {
+            set
+            {
                 this.refField = value;
             }
         }
-        
-        private static System.Xml.Serialization.XmlSerializer Serializer {
-            get {
-                if ((serializer == null)) {
+
+        private static System.Xml.Serialization.XmlSerializer Serializer
+        {
+            get
+            {
+                if ((serializer == null))
+                {
                     serializer = new System.Xml.Serialization.XmlSerializer(typeof(ParameterExpressionConfiguration));
                 }
                 return serializer;
             }
         }
-        
+
         #region Serialize/Deserialize
         /// <summary>
         /// Serializes current ParameterExpressionConfiguration object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
-        public virtual string Serialize() {
+        public virtual string Serialize()
+        {
             System.IO.StreamReader streamReader = null;
             System.IO.MemoryStream memoryStream = null;
-            try {
+            try
+            {
                 memoryStream = new System.IO.MemoryStream();
                 Serializer.Serialize(memoryStream, this);
                 memoryStream.Seek(0, System.IO.SeekOrigin.Begin);
                 streamReader = new System.IO.StreamReader(memoryStream);
                 return streamReader.ReadToEnd();
             }
-            finally {
-                if ((streamReader != null)) {
+            finally
+            {
+                if ((streamReader != null))
+                {
                     streamReader.Dispose();
                 }
-                if ((memoryStream != null)) {
+                if ((memoryStream != null))
+                {
                     memoryStream.Dispose();
                 }
             }
         }
-        
+
         /// <summary>
         /// Deserializes workflow markup into an ParameterExpressionConfiguration object
         /// </summary>
@@ -1321,71 +1827,86 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
         /// <param name="obj">Output ParameterExpressionConfiguration object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool Deserialize(string xml, out ParameterExpressionConfiguration obj, out System.Exception exception) {
+        public static bool Deserialize(string xml, out ParameterExpressionConfiguration obj, out System.Exception exception)
+        {
             exception = null;
             obj = default(ParameterExpressionConfiguration);
-            try {
+            try
+            {
                 obj = Deserialize(xml);
                 return true;
             }
-            catch (System.Exception ex) {
+            catch (System.Exception ex)
+            {
                 exception = ex;
                 return false;
             }
         }
-        
-        public static bool Deserialize(string xml, out ParameterExpressionConfiguration obj) {
+
+        public static bool Deserialize(string xml, out ParameterExpressionConfiguration obj)
+        {
             System.Exception exception = null;
             return Deserialize(xml, out obj, out exception);
         }
-        
-        public static ParameterExpressionConfiguration Deserialize(string xml) {
+
+        public static ParameterExpressionConfiguration Deserialize(string xml)
+        {
             System.IO.StringReader stringReader = null;
-            try {
+            try
+            {
                 stringReader = new System.IO.StringReader(xml);
                 return ((ParameterExpressionConfiguration)(Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader))));
             }
-            finally {
-                if ((stringReader != null)) {
+            finally
+            {
+                if ((stringReader != null))
+                {
                     stringReader.Dispose();
                 }
             }
         }
-        
+
         /// <summary>
         /// Serializes current ParameterExpressionConfiguration object into file
         /// </summary>
         /// <param name="fileName">full path of outupt xml file</param>
         /// <param name="exception">output Exception value if failed</param>
         /// <returns>true if can serialize and save into file; otherwise, false</returns>
-        public virtual bool SaveToFile(string fileName, out System.Exception exception) {
+        public virtual bool SaveToFile(string fileName, out System.Exception exception)
+        {
             exception = null;
-            try {
+            try
+            {
                 SaveToFile(fileName);
                 return true;
             }
-            catch (System.Exception e) {
+            catch (System.Exception e)
+            {
                 exception = e;
                 return false;
             }
         }
-        
-        public virtual void SaveToFile(string fileName) {
+
+        public virtual void SaveToFile(string fileName)
+        {
             System.IO.StreamWriter streamWriter = null;
-            try {
+            try
+            {
                 string xmlString = Serialize();
                 System.IO.FileInfo xmlFile = new System.IO.FileInfo(fileName);
                 streamWriter = xmlFile.CreateText();
                 streamWriter.WriteLine(xmlString);
                 streamWriter.Close();
             }
-            finally {
-                if ((streamWriter != null)) {
+            finally
+            {
+                if ((streamWriter != null))
+                {
                     streamWriter.Dispose();
                 }
             }
         }
-        
+
         /// <summary>
         /// Deserializes xml markup from file into an ParameterExpressionConfiguration object
         /// </summary>
@@ -1393,28 +1914,34 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
         /// <param name="obj">Output ParameterExpressionConfiguration object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool LoadFromFile(string fileName, out ParameterExpressionConfiguration obj, out System.Exception exception) {
+        public static bool LoadFromFile(string fileName, out ParameterExpressionConfiguration obj, out System.Exception exception)
+        {
             exception = null;
             obj = default(ParameterExpressionConfiguration);
-            try {
+            try
+            {
                 obj = LoadFromFile(fileName);
                 return true;
             }
-            catch (System.Exception ex) {
+            catch (System.Exception ex)
+            {
                 exception = ex;
                 return false;
             }
         }
-        
-        public static bool LoadFromFile(string fileName, out ParameterExpressionConfiguration obj) {
+
+        public static bool LoadFromFile(string fileName, out ParameterExpressionConfiguration obj)
+        {
             System.Exception exception = null;
             return LoadFromFile(fileName, out obj, out exception);
         }
-        
-        public static ParameterExpressionConfiguration LoadFromFile(string fileName) {
+
+        public static ParameterExpressionConfiguration LoadFromFile(string fileName)
+        {
             System.IO.FileStream file = null;
             System.IO.StreamReader sr = null;
-            try {
+            try
+            {
                 file = new System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read);
                 sr = new System.IO.StreamReader(file);
                 string xmlString = sr.ReadToEnd();
@@ -1422,100 +1949,122 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 file.Close();
                 return Deserialize(xmlString);
             }
-            finally {
-                if ((file != null)) {
+            finally
+            {
+                if ((file != null))
+                {
                     file.Dispose();
                 }
-                if ((sr != null)) {
+                if ((sr != null))
+                {
                     sr.Dispose();
                 }
             }
         }
         #endregion
     }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:njection-configuration")]
-    public partial class ConstantExpressionConfiguration : ExpressionConfiguration {
-        
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:njection-configuration")]
+    public partial class ConstantExpressionConfiguration : ExpressionConfiguration
+    {
+
         private ConfigurationNodeType nodeTypeField;
-        
+
         private bool nodeTypeFieldSpecified;
-        
+
         private string valueField;
-        
+
         private static System.Xml.Serialization.XmlSerializer serializer;
-        
-        public ConstantExpressionConfiguration() {
+
+        public ConstantExpressionConfiguration()
+        {
             this.nodeTypeField = ConfigurationNodeType.Constant;
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public ConfigurationNodeType nodeType {
-            get {
+        public ConfigurationNodeType nodeType
+        {
+            get
+            {
                 return this.nodeTypeField;
             }
-            set {
+            set
+            {
                 this.nodeTypeField = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool nodeTypeSpecified {
-            get {
+        public bool nodeTypeSpecified
+        {
+            get
+            {
                 return this.nodeTypeFieldSpecified;
             }
-            set {
+            set
+            {
                 this.nodeTypeFieldSpecified = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string value {
-            get {
+        public string value
+        {
+            get
+            {
                 return this.valueField;
             }
-            set {
+            set
+            {
                 this.valueField = value;
             }
         }
-        
-        private static System.Xml.Serialization.XmlSerializer Serializer {
-            get {
-                if ((serializer == null)) {
+
+        private static System.Xml.Serialization.XmlSerializer Serializer
+        {
+            get
+            {
+                if ((serializer == null))
+                {
                     serializer = new System.Xml.Serialization.XmlSerializer(typeof(ConstantExpressionConfiguration));
                 }
                 return serializer;
             }
         }
-        
+
         #region Serialize/Deserialize
         /// <summary>
         /// Serializes current ConstantExpressionConfiguration object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
-        public virtual string Serialize() {
+        public virtual string Serialize()
+        {
             System.IO.StreamReader streamReader = null;
             System.IO.MemoryStream memoryStream = null;
-            try {
+            try
+            {
                 memoryStream = new System.IO.MemoryStream();
                 Serializer.Serialize(memoryStream, this);
                 memoryStream.Seek(0, System.IO.SeekOrigin.Begin);
                 streamReader = new System.IO.StreamReader(memoryStream);
                 return streamReader.ReadToEnd();
             }
-            finally {
-                if ((streamReader != null)) {
+            finally
+            {
+                if ((streamReader != null))
+                {
                     streamReader.Dispose();
                 }
-                if ((memoryStream != null)) {
+                if ((memoryStream != null))
+                {
                     memoryStream.Dispose();
                 }
             }
         }
-        
+
         /// <summary>
         /// Deserializes workflow markup into an ConstantExpressionConfiguration object
         /// </summary>
@@ -1523,71 +2072,86 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
         /// <param name="obj">Output ConstantExpressionConfiguration object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool Deserialize(string xml, out ConstantExpressionConfiguration obj, out System.Exception exception) {
+        public static bool Deserialize(string xml, out ConstantExpressionConfiguration obj, out System.Exception exception)
+        {
             exception = null;
             obj = default(ConstantExpressionConfiguration);
-            try {
+            try
+            {
                 obj = Deserialize(xml);
                 return true;
             }
-            catch (System.Exception ex) {
+            catch (System.Exception ex)
+            {
                 exception = ex;
                 return false;
             }
         }
-        
-        public static bool Deserialize(string xml, out ConstantExpressionConfiguration obj) {
+
+        public static bool Deserialize(string xml, out ConstantExpressionConfiguration obj)
+        {
             System.Exception exception = null;
             return Deserialize(xml, out obj, out exception);
         }
-        
-        public static ConstantExpressionConfiguration Deserialize(string xml) {
+
+        public static ConstantExpressionConfiguration Deserialize(string xml)
+        {
             System.IO.StringReader stringReader = null;
-            try {
+            try
+            {
                 stringReader = new System.IO.StringReader(xml);
                 return ((ConstantExpressionConfiguration)(Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader))));
             }
-            finally {
-                if ((stringReader != null)) {
+            finally
+            {
+                if ((stringReader != null))
+                {
                     stringReader.Dispose();
                 }
             }
         }
-        
+
         /// <summary>
         /// Serializes current ConstantExpressionConfiguration object into file
         /// </summary>
         /// <param name="fileName">full path of outupt xml file</param>
         /// <param name="exception">output Exception value if failed</param>
         /// <returns>true if can serialize and save into file; otherwise, false</returns>
-        public virtual bool SaveToFile(string fileName, out System.Exception exception) {
+        public virtual bool SaveToFile(string fileName, out System.Exception exception)
+        {
             exception = null;
-            try {
+            try
+            {
                 SaveToFile(fileName);
                 return true;
             }
-            catch (System.Exception e) {
+            catch (System.Exception e)
+            {
                 exception = e;
                 return false;
             }
         }
-        
-        public virtual void SaveToFile(string fileName) {
+
+        public virtual void SaveToFile(string fileName)
+        {
             System.IO.StreamWriter streamWriter = null;
-            try {
+            try
+            {
                 string xmlString = Serialize();
                 System.IO.FileInfo xmlFile = new System.IO.FileInfo(fileName);
                 streamWriter = xmlFile.CreateText();
                 streamWriter.WriteLine(xmlString);
                 streamWriter.Close();
             }
-            finally {
-                if ((streamWriter != null)) {
+            finally
+            {
+                if ((streamWriter != null))
+                {
                     streamWriter.Dispose();
                 }
             }
         }
-        
+
         /// <summary>
         /// Deserializes xml markup from file into an ConstantExpressionConfiguration object
         /// </summary>
@@ -1595,28 +2159,34 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
         /// <param name="obj">Output ConstantExpressionConfiguration object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool LoadFromFile(string fileName, out ConstantExpressionConfiguration obj, out System.Exception exception) {
+        public static bool LoadFromFile(string fileName, out ConstantExpressionConfiguration obj, out System.Exception exception)
+        {
             exception = null;
             obj = default(ConstantExpressionConfiguration);
-            try {
+            try
+            {
                 obj = LoadFromFile(fileName);
                 return true;
             }
-            catch (System.Exception ex) {
+            catch (System.Exception ex)
+            {
                 exception = ex;
                 return false;
             }
         }
-        
-        public static bool LoadFromFile(string fileName, out ConstantExpressionConfiguration obj) {
+
+        public static bool LoadFromFile(string fileName, out ConstantExpressionConfiguration obj)
+        {
             System.Exception exception = null;
             return LoadFromFile(fileName, out obj, out exception);
         }
-        
-        public static ConstantExpressionConfiguration LoadFromFile(string fileName) {
+
+        public static ConstantExpressionConfiguration LoadFromFile(string fileName)
+        {
             System.IO.FileStream file = null;
             System.IO.StreamReader sr = null;
-            try {
+            try
+            {
                 file = new System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read);
                 sr = new System.IO.StreamReader(file);
                 string xmlString = sr.ReadToEnd();
@@ -1624,11 +2194,14 @@ namespace NJection.ExpressionSerialization.Ast.Configuration {
                 file.Close();
                 return Deserialize(xmlString);
             }
-            finally {
-                if ((file != null)) {
+            finally
+            {
+                if ((file != null))
+                {
                     file.Dispose();
                 }
-                if ((sr != null)) {
+                if ((sr != null))
+                {
                     sr.Dispose();
                 }
             }

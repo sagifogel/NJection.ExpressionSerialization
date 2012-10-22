@@ -2,6 +2,7 @@ using System;
 using System.Linq.Expressions;
 using NJection.ExpressionSerialization.Ast.Configuration;
 using NJection.ExpressionSerialization.Ast.Visitors;
+using NJection.Scope;
 
 namespace NJection.ExpressionSerialization.Ast.Expressions
 {	
@@ -74,6 +75,24 @@ namespace NJection.ExpressionSerialization.Ast.Expressions
 		
 		protected override ExpressionType AstNodeType {
             get { return ExpressionType.Parameter; }
+        }
+	}
+	
+	public partial class DefaultExpressionReader : AbstractExpression
+	{	
+		private DefaultExpressionConfiguration _configuration = null;
+
+		internal DefaultExpressionReader(DefaultExpressionConfiguration configuration, IScope scope, IExpressionConfigurationVisitor visitor) 
+			: base(scope, visitor) {
+
+			_configuration = configuration;
+			ReadConfiguration(configuration);	
+		}
+		
+		partial void ReadConfiguration(DefaultExpressionConfiguration configuration);
+		
+		protected override ExpressionType AstNodeType {
+            get { return ExpressionType.Default; }
         }
 	}
 }

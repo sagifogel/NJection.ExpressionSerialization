@@ -54,6 +54,7 @@
     <Compile Include="Ast\Expressions\AbstractExpression.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Ast\Expressions\DefaultExpressionReader.cs" />
     <Compile Include="Ast\Expressions\ExpresionReader.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

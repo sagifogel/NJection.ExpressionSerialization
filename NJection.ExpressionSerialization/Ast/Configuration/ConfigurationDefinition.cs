@@ -33,4 +33,11 @@ namespace NJection.ExpressionSerialization.Ast.Configuration
             return visitor.Visit(scope, this);
         }
 	}
+	
+	public partial class DefaultExpressionConfiguration 
+	{
+		internal override Expression Accept(IScope scope, IExpressionConfigurationVisitor visitor) {
+            return visitor.Visit(scope, this);
+        }
+	}
 }

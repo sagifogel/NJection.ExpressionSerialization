@@ -24,5 +24,9 @@ namespace NJection.ExpressionSerialization.Ast.Visitors
 		public Expression Visit(IScope scope, ParameterExpressionConfiguration configuration) {
 			return ExpressionReader.Parameter(configuration, scope, this);
 		}
+
+		public Expression Visit(IScope scope, DefaultExpressionConfiguration configuration) {
+			return ExpressionReader.Default(configuration, scope, this);
+		}
 	}
 }

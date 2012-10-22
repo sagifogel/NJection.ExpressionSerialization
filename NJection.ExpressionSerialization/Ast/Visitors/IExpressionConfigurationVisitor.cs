@@ -13,5 +13,6 @@ namespace NJection.ExpressionSerialization.Ast.Visitors
 		Expression Visit(IScope scope, ConstantExpressionConfiguration configuration);
 		Expression Visit(IScope scope, NewExpressionConfiguration configuration);
 		Expression Visit(IScope scope, ParameterExpressionConfiguration configuration);
+		Expression Visit(IScope scope, DefaultExpressionConfiguration configuration);
 	}
 }

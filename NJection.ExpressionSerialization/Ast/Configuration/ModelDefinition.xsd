@@ -46,7 +46,7 @@
   <xs:complexType name="ExpressionConfiguration" abstract="true">
     <xs:attribute name="type" type="TypeSystem"></xs:attribute>
   </xs:complexType>
-  
+
   <xs:complexType name="ConstantExpressionConfiguration">
     <xs:complexContent>
       <xs:extension base="ExpressionConfiguration">
@@ -63,6 +63,14 @@
           <xs:element type="arguments" name="arguments" maxOccurs="unbounded" minOccurs="0"></xs:element>
         </xs:sequence>
         <xs:attribute name="nodeType" type="ConfigurationNodeType" fixed="New" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="DefaultExpressionConfiguration">
+    <xs:complexContent>
+      <xs:extension base="ExpressionConfiguration">
+        <xs:attribute name="nodeType" type="ConfigurationNodeType" fixed="Default" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -91,6 +99,7 @@
       <xs:enumeration value="New" />
       <xs:enumeration value="Lambda" />
       <xs:enumeration value="Expression" />
+      <xs:enumeration value="Default" />
     </xs:restriction>
   </xs:simpleType>
 
