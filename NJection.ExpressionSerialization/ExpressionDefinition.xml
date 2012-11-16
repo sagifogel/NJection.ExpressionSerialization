@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <njection_configuration xmlns="urn:njection-configuration" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <lambda type="System.Func`1[System.Int32]">
-    <expression  xsi:type="DefaultExpressionConfiguration" type="System.Int32">
+    <expression xsi:type="InvokeExpressionConfiguration" type="System.Int32">
+      <expression type="System.Func`1[System.Int32]">
+        <expression xsi:type="ConstantExpressionConfiguration" value="10" type="System.Int32" />
+      </expression>
     </expression>
   </lambda>
 </njection_configuration>

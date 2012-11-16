@@ -28,7 +28,7 @@
       <xs:extension base="ExpressionConfiguration">
         <xs:sequence>
           <xs:element type="ExpressionConfiguration" name="expression" maxOccurs="1" minOccurs="1" />
-          <xs:element type="arguments" name="arguments" maxOccurs="1" minOccurs="1"></xs:element>
+          <xs:element type="arguments" name="arguments" maxOccurs="1" minOccurs="0" nillable="true"></xs:element>
         </xs:sequence>
         <xs:attribute name="nodeType" type="ConfigurationNodeType" fixed="Lambda"></xs:attribute>
         <xs:attribute name="name" type="xs:string" use="optional"></xs:attribute>
@@ -44,14 +44,14 @@
   </xs:group>
 
   <xs:complexType name="ExpressionConfiguration" abstract="true">
-    <xs:attribute name="type" type="TypeSystem"></xs:attribute>
+    <xs:attribute name="type" type="TypeSystem" use="required"></xs:attribute>
   </xs:complexType>
 
   <xs:complexType name="ConstantExpressionConfiguration">
     <xs:complexContent>
       <xs:extension base="ExpressionConfiguration">
         <xs:attribute name="nodeType" type="ConfigurationNodeType" fixed="Constant" />
-        <xs:attribute name="value" type="xs:string" />
+        <xs:attribute name="value" type="xs:string" />        
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -63,6 +63,18 @@
           <xs:element type="arguments" name="arguments" maxOccurs="unbounded" minOccurs="0"></xs:element>
         </xs:sequence>
         <xs:attribute name="nodeType" type="ConfigurationNodeType" fixed="New" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="InvokeExpressionConfiguration">
+    <xs:complexContent>
+      <xs:extension base="ExpressionConfiguration">
+        <xs:sequence>
+          <xs:element type="arguments" name="arguments" maxOccurs="1" minOccurs="0" nillable="true"></xs:element>
+          <xs:element name="expression" type="LambdaExpressionConfiguration" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+        <xs:attribute name="nodeType" type="ConfigurationNodeType" fixed="Invoke" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -87,7 +99,6 @@
 
   <xs:complexType name="arguments">
     <xs:sequence maxOccurs="unbounded" minOccurs="0">
-      <!--<xs:element type="ConstantExpressionConfiguration" name="constant" minOccurs="0" maxOccurs="unbounded"></xs:element>-->
       <xs:element type="ParameterExpressionConfiguration" name="parameter" minOccurs="0" maxOccurs="unbounded"></xs:element>
     </xs:sequence>
   </xs:complexType>
@@ -100,6 +111,7 @@
       <xs:enumeration value="Lambda" />
       <xs:enumeration value="Expression" />
       <xs:enumeration value="Default" />
+      <xs:enumeration value="Invoke" />
     </xs:restriction>
   </xs:simpleType>
 

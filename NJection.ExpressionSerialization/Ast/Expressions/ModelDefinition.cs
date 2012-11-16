@@ -95,4 +95,22 @@ namespace NJection.ExpressionSerialization.Ast.Expressions
             get { return ExpressionType.Default; }
         }
 	}
+	
+	public partial class InvokeExpressionReader : AbstractExpression
+	{	
+		private InvokeExpressionConfiguration _configuration = null;
+
+		internal InvokeExpressionReader(InvokeExpressionConfiguration configuration, IScope scope, IExpressionConfigurationVisitor visitor) 
+			: base(scope, visitor) {
+
+			_configuration = configuration;
+			ReadConfiguration(configuration);	
+		}
+		
+		partial void ReadConfiguration(InvokeExpressionConfiguration configuration);
+		
+		protected override ExpressionType AstNodeType {
+            get { return ExpressionType.Invoke; }
+        }
+	}
 }

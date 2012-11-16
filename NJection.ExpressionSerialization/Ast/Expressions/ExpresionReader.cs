@@ -27,5 +27,9 @@ namespace NJection.ExpressionSerialization.Ast.Expressions
 		public static Expression Default(DefaultExpressionConfiguration configuration, IScope scope, IExpressionConfigurationVisitor visitor) {
 			return new DefaultExpressionReader(configuration, scope, visitor);
 		}
+
+		public static Expression Invoke(InvokeExpressionConfiguration configuration, IScope scope, IExpressionConfigurationVisitor visitor) {
+			return new InvokeExpressionReader(configuration, scope, visitor);
+		}
 	}
 }

@@ -5,4 +5,5 @@
 	<expression name="NewExpression" nodeType="New"/>
 	<expression name="ParameterExpression" nodeType="Parameter"/>
   <expression name="DefaultExpression" nodeType="Default"/>
+  <expression name="InvokeExpression" nodeType="Invoke"/>
 </models>
